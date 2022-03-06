@@ -157,34 +157,4 @@ saved_model = load_model("model_vgg.h5")
 saved_model.summary()
 
 
-# print("check_model")
-# # saved_model()
-# import matplotlib.pyplot as plt
-# from keras.preprocessing import image
-#
-# img = image.load_img("child113153.jpg",target_size=(224, 224))
-# img = np.asarray(img)
-# plt.imshow(img)
-# img = np.expand_dims(img, axis=0)
-# # print(img)
-# classes = ['adults', 'kids', 'other']
-# output = saved_model.predict(img)
-# print(output)
-# # print(output[0][0])
-# # print(output[0][1])
-# # print(output[0][2])
-#
-# i = np.argmax(output)
-# print(classes[i])
-# # print(output.shape)
-# # if output[0][0] > output[0][1] and output[0][0] > output[0][2]:
-# #     print("adults")
-# # if output[0][1] > output[0][0] and output[0][1] > output[0][2]:
-# #     print('kids')
-# # if output[0][2] > output[0][1] and output[0][2] > output[0][0]:
-# #   print('other')
-#
-#
-#
-#
-#
+
