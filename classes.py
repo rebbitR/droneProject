@@ -1,16 +1,16 @@
 import cv2
-import numpy
+import numpy as np
 from PIL import Image
-from yolo import yolo
+
 from model import model
+
 class frame:
     def __init__(self,frame,second):
         self.frameC=frame
         self.secondC=second
         self.objectsC=[]
 
-
-    def changeResolution1(pathOfImage, numImage):
+    def changeResolution1(self,pathOfImage, numImage):
         img = Image.open(pathOfImage)
         resized_img = img.resize((224, 224))
         # resized_img.save("fixResolution/resized_image"+str(numImage)+".jpg")
@@ -19,26 +19,26 @@ class frame:
 
     # changeResolution("tryReolotiution/images.jpg")
 
-    def changeResolution2(frame):
+    def changeResolution2(self,frame):
         # numpydata = asarray(frame)
         # resized_img = numpydata.resize((32, 32))
         img = Image.fromarray(frame)
         resized_img = img.resize((224, 224))
         # resized_img.save("resized_image"+str(1)+".jpg")
-        open_cv_image = numpy.array(resized_img)
+        open_cv_image = np.array(resized_img)
         open_cv_image = open_cv_image[:, :, ::-1].copy()
         return open_cv_image
 
     # cut object by place and white background:---------------------------
     # function that return image with white background for size 224/224 to send the model
-    def white(img):
+    def white(self,img):
         # read image
         ht, wd, cc = img.shape
         # create new image of desired size and color (white) for padding
         ww = 224
         hh = 224
         color = (255, 255, 255)
-        result = numpy.full((hh, ww, cc), color, dtype=numpy.uint8)
+        result = np.full((hh, ww, cc), color, dtype=np.uint8)
         # set offsets for top left corner
         xx = 0
         yy = 0
@@ -48,54 +48,89 @@ class frame:
 
     # function that get image and place and return fix image for the model:
     # the place must be: [x,y,w,h]
-    def cut_object(image, place):
+    def cut_objects(self):
 
-        placeInt = place[1:-2]
-        placeInt = placeInt.split(',')
-        x = round(float(placeInt[0]))
-        y = round(float(placeInt[1]))
-        w = round(float(placeInt[2]))
-        h = round(float(placeInt[3]))
-        count = h * w
-        print(count, "pixels")
-        if (count > 50, 176):
-            crop_img = image[y:y + h, x:x + w]
-            crop_img = frame.changeResolution2(crop_img)
-        if (count < 50, 176):
-            if (h < 224 and w < 224):
-                crop_img = image[y:y + h, x:x + w]
-                crop_img = frame.white(crop_img)
-            else:
-                if (h < 224):
-                    h = 224
-                if (w < 224):
-                    w = 224
-                crop_img = image[y:y + h, x:x + w]
+        mone=0
+        for obj1 in self.objectsC:
+            placeInt = obj1.placeC[1:-2]
+            placeInt = placeInt.split(',')
+            x = round(float(placeInt[0]))
+            y = round(float(placeInt[1]))
+            w = round(float(placeInt[2]))
+            h = round(float(placeInt[3]))
+            count = h * w
+            print(count, "pixels")
+            if (count > 50176):
+                crop_img = self.frameC[y:y + h, x:x + w]
                 crop_img = frame.changeResolution2(crop_img)
-        else:
-            crop_img = image[y:y + h, x:x + w]
+            if (count < 50176):
+                if (h < 224 and w < 224):
+                    crop_img = self.frameC[y:y + h, x:x + w]
+                    crop_img = frame.white(crop_img)
+                else:
+                    if (h < 224):
+                        h = 224
+                    if (w < 224):
+                        w = 224
+                    crop_img = self.frameC[y:y + h, x:x + w]
+                    crop_img = frame.changeResolution2(crop_img)
+            else:
+                crop_img = self.frameC[y:y + h, x:x + w]
 
-        height, width, c = crop_img.shape
-        print(height * width, "pixels")
-        # cv2.imshow("cropped", crop_img)
-        # cv2.waitKey(500)
-        # cv2.destroyAllWindows()
-        return crop_img
+            self.objectsC[mone].objectC=crop_img
+            mone=mone+1
 
-    # פונקציה שמקבלת מערך של תמונות עם מיקום של אוביקטים ומחזירה מערך עם האוביקטים לשליחה למודל
-    def cut_objects_from_frame(self):
-        for object in self.objectsC:
-            object.objectC=frame.cut_object(self.frameC,object.placeC)
+            height, width, c = crop_img.shape
+            print(height * width, "pixels")
+            # cv2.imshow("cropped", crop_img)
+            # cv2.waitKey(500)
+            # cv2.destroyAllWindows()
 
-    def find_objects_with_yolo(self):
-        places=yolo(self.frameC)
-        for place in places:
-            object=obj(place)
-            self.objectsC.append(object)
 
-    def find_kinds_with_model(self):
-        for object in self.objectsC:
-            object.kindC=model(object.objectC)
+
+
+    def yolo_detect(self):
+
+        # classFile = 'yolo_file/coco.names'
+        # with open(classFile, 'rt') as f:
+        #     classNames = f.read().rstrip('\n').split('\n')
+
+        configPath = 'yolo_file/ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt'
+        weightsPath = 'yolo_file/frozen_inference_graph.pb'
+        net = cv2.dnn_DetectionModel(weightsPath, configPath)
+
+        net.setInputSize(320, 320)
+        net.setInputScale(1.0 / 127.5)
+        net.setInputMean((127.5, 127.5, 127.5))
+        net.setInputSwapRB(True)
+
+        classIds, confs, bbox = net.detect(np.asarray(self.frameC))
+
+        numImg = 0
+
+        if len(classIds) != 0:
+
+
+            for classId, confidence, box in zip(classIds.flatten(), confs.flatten(), bbox):
+                left = box[0]
+                top = box[1]
+                right = box[2] + box[0]
+                bottom = box[3] + box[1]
+
+                myPlace=place(left,top,right,bottom)
+                object = obj(myPlace)
+                self.objectsC.append(object)
+
+                numImg = numImg + 1
+
+    def model(self):
+        # self.objectsC[i].kindC=kind
+        return 
+
+
+    # def find_kinds_with_model(self):
+    #     for object in self.objectsC:
+    #         object.kindC=model(object.objectC)
 
 
 

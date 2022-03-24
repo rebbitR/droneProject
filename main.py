@@ -7,9 +7,12 @@ from cut_video import cut_video_to_frame
 def program(path):
     buf=cut_video_to_frame(path)
     for frame1 in buf:
-        frame1.find_objects_with_yolo()
-        frame1.cut_objects_from_frame()
-        frame1.find_kinds_with_model()
+        # find_objects at frame _with_yolo:
+        frame1.yolo_detect()
+        # cut_objects_from_frame():
+        frame1.cut_objects()
+        # find_kinds_with_model:
+        frame1.model()
         frame1.result()
     send_buf_to_log(buf)
     log = getLog()
