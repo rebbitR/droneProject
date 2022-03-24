@@ -8,7 +8,7 @@ import classes
 
 def cut_video_to_frame(video_path: str):
     cap = cv2.VideoCapture(video_path)
-
+    print('11111111')
     if not cap.isOpened():
         return
     # # to save the images:
@@ -33,6 +33,10 @@ def cut_video_to_frame(video_path: str):
                 # cv2.imwrite("{}_{}.{}".format(base_path, "0000", ext),
                 #             frame)
                 second = 0
+                cv2.imshow('',frame)
+                cv2.waitKey(500)
+                cv2.destroyAllWindows()
+                print(222222)
                 myf1 = classes.frame(frame, second)
                 buf.append(myf1)
 
@@ -47,6 +51,10 @@ def cut_video_to_frame(video_path: str):
                 # print(base_path)
                 # print(ext)
                 # print(idx)
+                cv2.imshow('',frame)
+                cv2.waitKey(500)
+                cv2.destroyAllWindows()
+                print('3333333')
                 myf1 =classes.frame(frame, second)
                 # cv2.imwrite("{}_{}.{}".format(base_path, filled_second, ext),
                 #             frame)
