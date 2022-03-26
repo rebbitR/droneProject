@@ -2,8 +2,11 @@ import cv2
 import numpy as np
 from PIL import Image
 from load_model import model
+from yolo import yolo_detect_return_places_list
 
 
+def rectangle(frame,left,top,right,bottom,R,B,G):
+    return cv2.rectangle(frame,(left,top),(right,bottom),(B,G,R),2)
 class frame:
     def __init__(self,frame,second):
         self.frameC=frame
@@ -99,13 +102,16 @@ class frame:
             w = round(float(obj1.placeC.wC))
             h = round(float(obj1.placeC.hC))
 
-            image1 = Image.fromarray(self.frameC)
-            crop_image = image1.crop((x, y, h, w))
-            np_img = np.array(crop_image)
-            cv2.imshow('before', np_img)
+
+            # image1 = Image.fromarray(self.frameC)
+            # crop_image = image1.crop((x, y, h, w))
+            # np_img = np.array(crop_image)
+            crop_img = self.frameC[obj1.placeC.yC:obj1.placeC.yC + obj1.placeC.hC, obj1.placeC.xC:obj1.placeC.xC + obj1.placeC.wC]
+            cv2.imshow('before', crop_img)
             cv2.waitKey(500)
             cv2.destroyAllWindows()
-            crop_img = self.white(np_img)
+            crop_img = self.white(crop_img)
+            # crop_img = self.changeResolution2(np_img)
             cv2.imshow('after', crop_img)
             cv2.waitKey(500)
             cv2.destroyAllWindows()
@@ -115,38 +121,14 @@ class frame:
 
 
     def yolo_detect(self):
+        places = yolo_detect_return_places_list(self.frameC)
+        for myPlace in places:
+            object = obj(myPlace)
+            self.objectsC.append(object)
 
-        # classFile = 'yolo_file/coco.names'
-        # with open(classFile, 'rt') as f:
-        #     classNames = f.read().rstrip('\n').split('\n')
 
-        configPath = 'yolo_file/ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt'
-        weightsPath = 'yolo_file/frozen_inference_graph.pb'
-        net = cv2.dnn_DetectionModel(weightsPath, configPath)
 
-        net.setInputSize(320, 320)
-        net.setInputScale(1.0 / 127.5)
-        net.setInputMean((127.5, 127.5, 127.5))
-        net.setInputSwapRB(True)
 
-        classIds, confs, bbox = net.detect(np.asarray(self.frameC))
-
-        numImg = 0
-
-        if len(classIds) != 0:
-
-            for classId, confidence, box in zip(classIds.flatten(), confs.flatten(), bbox):
-                left = box[0]
-                top = box[1]
-                right = box[2] + box[0]
-                bottom = box[3] + box[1]
-                print('found place:')
-                print(left,top,right,bottom)
-                myPlace=[left,top,right,bottom]
-                object = obj(myPlace)
-                self.objectsC.append(object)
-
-                numImg = numImg + 1
 
     def model(self):
         mone=0
@@ -155,62 +137,53 @@ class frame:
             cv2.imwrite("object.png", obj1.objectC)
             i=model("object.png")
             classes = ['airplain', 'bird', 'drone', 'helicopter']
+            print(classes[i])
             self.objectsC[mone].kindC = classes[i]
             mone = mone + 1
 
 
 
-    # def find_kinds_with_model(self):
-    #     for object in self.objectsC:
-    #         object.kindC=model(object.objectC)
-
-
-
     # פונקציה המסמנת על התמונה את האוביקטים שנמצאו וסוגם
     def result(self):
-        if self.objectsC!=[]:
-            for i in self.objectsC:
-                if i.kindC=='drone':
-                    # 0=x, 1=y, 2=w, 3=h
-                    # blue
-                    self.frameC=cv2.rectangle(self.frameC,
-                                  (i.placeC.xC, i.placeC.yC),
-                                  (i.placeC.hC, i.placeC.wC),
-                                  (255,0,0), 2)
-                if i.kindC=='airplain':
-                    # 0=x, 1=y, 2=w, 3=h
-                    # green
-                    self.frameC=cv2.rectangle(self.frameC,
-                                  (i.placeC.xC, i.placeC.yC),
-                                  (i.placeC.hC, i.placeC.wC),
-                                  (0, 255, 0), 2)
-                if i.kindC=='bird':
-                    # 0=x, 1=y, 2=w, 3=h
+        if len(self.objectsC)!=0:
+            for myObg in self.objectsC:
+                if myObg.kindC=='drone':
                     # red
-                    self.frameC=cv2.rectangle(self.frameC,
-                                  (i.placeC[0], i.placeC[1]),
-                                  (i.placeC[0] + i.placeC[2],
-                                   i.placeC[1] + i.placeC[3]),
-                                  (0, 0, 255), 2)
-                if i.kindC=='helicopter':
-                    # 0=x, 1=y, 2=w, 3=h
+                    R=255
+                    B=0
+                    G=0
+                elif myObg.kindC=='airplain':
+                    # blue
+                    R=0
+                    B=255
+                    G=0
+                elif myObg.kindC=='bird':
+                    # green
+                    R=0
+                    B=0
+                    G=255
+                elif myObg.kindC=='helicopter':
                     # black
-                    self.frameC=cv2.rectangle(self.frameC,
-                                  (i.placeC.xC, i.placeC.yC),
-                                  (i.placeC.hC, i.placeC.wC),
-                                  (200, 200, 55), 2)
-
-
+                    R=0
+                    B=0
+                    G=0
+                self.frameC=rectangle(self.frameC,
+                                      myObg.placeC.xC,
+                                      myObg.placeC.yC+myObg.placeC.hC,
+                                      myObg.placeC.xC+myObg.placeC.wC,
+                                      myObg.placeC.yC,
+                                      R,B,G)
 
 
 
 class place:
-    def __init__(self,x,y,h,w):
+    def __init__(self,x,y,w,h):
         print(y)
         self.xC=x
         self.yC=y
-        self.hC=h
         self.wC=w
+        self.hC=h
+
 
 
 class obj:

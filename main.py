@@ -39,7 +39,7 @@ from log import getLog,send_buf_to_log
 # for i in buf:
 #     print(i.x)
 
-from cut_video import cut_video_to_frame
+# from cut_video import cut_video_to_frame
 import cv2
 from classes import frame
 
@@ -66,5 +66,5 @@ def program(path):
 
 
 
-buf = program("img.png")
+buf = program("drone-flying-toilet-paper-roll-to-customer-concept-delivery-over-sky-176661172.jpg")
 
