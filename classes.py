@@ -102,16 +102,22 @@ class frame:
             w = round(float(obj1.placeC.wC))
             h = round(float(obj1.placeC.hC))
 
-
-            # image1 = Image.fromarray(self.frameC)
-            # crop_image = image1.crop((x, y, h, w))
-            # np_img = np.array(crop_image)
-            crop_img = self.frameC[obj1.placeC.yC:obj1.placeC.yC + obj1.placeC.hC, obj1.placeC.xC:obj1.placeC.xC + obj1.placeC.wC]
-            cv2.imshow('before', crop_img)
-            cv2.waitKey(500)
-            cv2.destroyAllWindows()
-            crop_img = self.white(crop_img)
-            # crop_img = self.changeResolution2(np_img)
+            if (w>224 or h>224):
+                if w<224:
+                    w=224
+                elif h<224:
+                    h=224
+                crop_img = self.frameC[y:y + h, x:x + w]
+                cv2.imshow('before', crop_img)
+                cv2.waitKey(500)
+                cv2.destroyAllWindows()
+                crop_img = frame.changeResolution2(crop_img)
+            else:
+                crop_img = self.frameC[y:y + h, x:x + w]
+                cv2.imshow('before', crop_img)
+                cv2.waitKey(500)
+                cv2.destroyAllWindows()
+                crop_img = self.white(crop_img)
             cv2.imshow('after', crop_img)
             cv2.waitKey(500)
             cv2.destroyAllWindows()
