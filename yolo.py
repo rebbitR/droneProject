@@ -175,7 +175,10 @@ import PIL
 # right = box[2] + box[0]
 # top = box[3] + box[1]
 def yolo_detect_return_places_list(frame):
+    classFile='yolo_file/coco.names'
 
+    with open(classFile,'rt') as f:
+        classNames=f.read().rstrip('\n').split('\n')
     configPath='yolo_file/ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt'
     weightsPath='yolo_file/frozen_inference_graph.pb'
     net = cv2.dnn_DetectionModel(weightsPath,configPath)
@@ -187,32 +190,17 @@ def yolo_detect_return_places_list(frame):
 
     classIds, confs, bbox = net.detect(frame)
 
+    types=[]
     places = []
     if len(classIds) != 0:
         for classId, confidence, box in zip(classIds.flatten(), confs.flatten(), bbox):
             myPlace=[box[0],box[1],box[2],box[3]]
             places.append(myPlace)
-    return places
+            types.append(classNames[classId-1])
+    return places,types
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    return list1
 

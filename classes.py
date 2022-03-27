@@ -5,28 +5,27 @@ from load_model import model
 from yolo import yolo_detect_return_places_list
 
 
-def rectangle(frame,left,top,right,bottom,R,B,G):
-    return cv2.rectangle(frame,(left,top),(right,bottom),(B,G,R),2)
+
 class frame:
+    global size
+    size=224
     def __init__(self,frame,second):
         self.frameC=frame
         self.secondC=second
         self.objectsC=[]
 
-    def changeResolution1(self,pathOfImage, numImage):
-        img = Image.open(pathOfImage)
-        resized_img = img.resize((224, 224))
-        # resized_img.save("fixResolution/resized_image"+str(numImage)+".jpg")
-        # path="fixResolution/resized_image"+str(numImage)+".jpg"
-        return resized_img
-
-    # changeResolution("tryReolotiution/images.jpg")
+    # def changeResolution1(self,pathOfImage, numImage):
+    #     img = Image.open(pathOfImage)
+    #     resized_img = img.resize((size, size))
+    #     # resized_img.save("fixResolution/resized_image"+str(numImage)+".jpg")
+    #     # path="fixResolution/resized_image"+str(numImage)+".jpg"
+    #     return resized_img
 
     def changeResolution2(self,frame):
         # numpydata = asarray(frame)
-        # resized_img = numpydata.resize((32, 32))
+        # resized_img = numpydata.resize((size, size))
         img = Image.fromarray(frame)
-        resized_img = img.resize((224, 224))
+        resized_img = img.resize((size, size))
         # resized_img.save("resized_image"+str(1)+".jpg")
         open_cv_image = np.array(resized_img)
         open_cv_image = open_cv_image[:, :, ::-1].copy()
@@ -36,11 +35,10 @@ class frame:
     # function that return image with white background for size 224/224 to send the model
     def white(self,img):
         # read image
-        print(type(img))
         ht, wd, cc = img.shape
         # create new image of desired size and color (white) for padding
-        ww = 224
-        hh = 224
+        ww = size
+        hh = size
         color = (255, 255, 255)
         result = np.full((hh, ww, cc), color, dtype=np.uint8)
         # set offsets for top left corner
@@ -50,45 +48,7 @@ class frame:
         result[yy:yy + ht, xx:xx + wd] = img
         return result
 
-    # # function that get image and place and return fix image for the model:
-    # # the place must be: [x,y,w,h]
-    # def cut_objects(self):
-    #
-    #     mone=0
-    #     for obj1 in self.objectsC:
-    #         placeInt = obj1.placeC[1:-2]
-    #         placeInt = placeInt.split(',')
-    #         x = round(float(placeInt[0]))
-    #         y = round(float(placeInt[1]))
-    #         w = round(float(placeInt[2]))
-    #         h = round(float(placeInt[3]))
-    #         count = h * w
-    #         print(count, "pixels")
-    #         if (count > 50176):
-    #             crop_img = self.frameC[y:y + h, x:x + w]
-    #             crop_img = frame.changeResolution2(crop_img)
-    #         if (count < 50176):
-    #             if (h < 224 and w < 224):
-    #                 crop_img = self.frameC[y:y + h, x:x + w]
-    #                 crop_img = frame.white(crop_img)
-    #             else:
-    #                 if (h < 224):
-    #                     h = 224
-    #                 if (w < 224):
-    #                     w = 224
-    #                 crop_img = self.frameC[y:y + h, x:x + w]
-    #                 crop_img = frame.changeResolution2(crop_img)
-    #         else:
-    #             crop_img = self.frameC[y:y + h, x:x + w]
-    #
-    #         self.objectsC[mone].objectC=crop_img
-    #         mone=mone+1
-    #
-    #         height, width, c = crop_img.shape
-    #         print(height * width, "pixels")
-    #         # cv2.imshow("cropped", crop_img)
-    #         # cv2.waitKey(500)
-    #         # cv2.destroyAllWindows()
+
 
     # function that get image and place and return fix image for the model:
     # the place must be: [x,y,w,h]
@@ -102,16 +62,16 @@ class frame:
             w = round(float(obj1.placeC.wC))
             h = round(float(obj1.placeC.hC))
 
-            if (w>224 or h>224):
-                if w<224:
-                    w=224
-                elif h<224:
-                    h=224
+            if (w>size or h>size):
+                if w<size:
+                    w=size
+                elif h<size:
+                    h=size
                 crop_img = self.frameC[y:y + h, x:x + w]
                 cv2.imshow('before', crop_img)
                 cv2.waitKey(500)
                 cv2.destroyAllWindows()
-                crop_img = frame.changeResolution2(crop_img)
+                crop_img = self.changeResolution2(crop_img)
             else:
                 crop_img = self.frameC[y:y + h, x:x + w]
                 cv2.imshow('before', crop_img)
@@ -127,27 +87,31 @@ class frame:
 
 
     def yolo_detect(self):
-        places = yolo_detect_return_places_list(self.frameC)
-        for myPlace in places:
-            object = obj(myPlace)
-            self.objectsC.append(object)
-
-
+        places,types = yolo_detect_return_places_list(self.frameC)
+        mone=0
+        print('yolo:')
+        if len(places)!=0:
+            for myPlace in places:
+                print(str(mone)+' '+types[mone])
+                object = obj(myPlace)
+                self.objectsC.append(object)
+                mone=mone+1
 
 
 
     def model(self):
         mone=0
+        print('model:')
         for obj1 in self.objectsC:
-            print(type(obj1))
             cv2.imwrite("object.png", obj1.objectC)
-            i=model("object.png")
+            i=model("object.png",size)
             classes = ['airplain', 'bird', 'drone', 'helicopter']
-            print(classes[i])
+            print(str(mone)+' '+classes[i])
             self.objectsC[mone].kindC = classes[i]
             mone = mone + 1
 
-
+    def rectangle(self,frame, left, top, right, bottom, R, B, G):
+        return cv2.rectangle(frame, (left, top), (right, bottom), (B, G, R), 2)
 
     # פונקציה המסמנת על התמונה את האוביקטים שנמצאו וסוגם
     def result(self):
@@ -173,7 +137,7 @@ class frame:
                     R=0
                     B=0
                     G=0
-                self.frameC=rectangle(self.frameC,
+                self.frameC=self.rectangle(self.frameC,
                                       myObg.placeC.xC,
                                       myObg.placeC.yC+myObg.placeC.hC,
                                       myObg.placeC.xC+myObg.placeC.wC,
@@ -184,7 +148,6 @@ class frame:
 
 class place:
     def __init__(self,x,y,w,h):
-        print(y)
         self.xC=x
         self.yC=y
         self.wC=w
@@ -199,10 +162,3 @@ class obj:
         self.objectC=object
         self.kindC=kind
 
-# class try1:
-#     def __init__(self,x):
-#         self.x=x
-#     def replace(self):
-#         self.x=100
-#     def ret(self):
-#         return self.x

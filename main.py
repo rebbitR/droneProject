@@ -50,7 +50,7 @@ def program(path):
     # cv2.destroyAllWindows()
     frame1=frame(img,1)
     cv2.imshow('', frame1.frameC)
-    cv2.waitKey(500)
+    cv2.waitKey(100)
     cv2.destroyAllWindows()
     # find_objects at frame _with_yolo:
     frame1.yolo_detect()
@@ -60,11 +60,15 @@ def program(path):
     frame1.model()
     frame1.result()
     cv2.imwrite("result.png", frame1.frameC)
+    result=cv2.imread("result.png")
+    cv2.imshow('result', result)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
     # send_buf_to_log(buf)
     # log = getLog()
 
 
 
 
-buf = program("images/drone-flying-toilet-paper-roll-to-customer-concept-delivery-over-sky-176661172.jpg")
+buf = program("images/birds-flying-overcast-sky-12614779.jpg")
 

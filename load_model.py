@@ -6,9 +6,9 @@ import numpy as np
 from keras.models import load_model
 
 
-def model(path):
+def model(path,size):
     saved_model = load_model("model_vgg2.h5")
-    img = image.load_img(path, target_size=(224, 224))
+    img = image.load_img(path, target_size=(size, size))
     img = np.asarray(img)
 
     img = np.expand_dims(img, axis=0)
