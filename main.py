@@ -66,5 +66,5 @@ def program(path):
 
 
 
-buf = program("images/drone6.jpg")
+buf = program("images/V_DRONE_0011_007.png")
 
