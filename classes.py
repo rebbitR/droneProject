@@ -21,6 +21,13 @@ class frame:
     #     # path="fixResolution/resized_image"+str(numImage)+".jpg"
     #     return resized_img
 
+    def show_img(self,img=[],txt='',waitKey=500):
+        if (img==[]):
+            img=self.frameC
+        cv2.imshow(txt, img)
+        cv2.waitKey(waitKey)
+        cv2.destroyAllWindows()
+
     def changeResolution2(self,frame):
         # numpydata = asarray(frame)
         # resized_img = numpydata.resize((size, size))
@@ -68,20 +75,13 @@ class frame:
                 elif h<size:
                     h=size
                 crop_img = self.frameC[y:y + h, x:x + w]
-                cv2.imshow('before', crop_img)
-                cv2.waitKey(500)
-                cv2.destroyAllWindows()
+                self.show_img(img=crop_img,txt='before')
                 crop_img = self.changeResolution2(crop_img)
             else:
                 crop_img = self.frameC[y:y + h, x:x + w]
-                cv2.imshow('before', crop_img)
-                cv2.waitKey(500)
-                cv2.destroyAllWindows()
+                self.show_img(img=crop_img,txt='before')
                 crop_img = self.white(crop_img)
-            cv2.imshow('after', crop_img)
-            cv2.waitKey(500)
-            cv2.destroyAllWindows()
-
+            self.show_img(img=crop_img,txt='after')
             self.objectsC[mone].objectC=crop_img
             mone=mone+1
 
@@ -92,11 +92,10 @@ class frame:
         print('yolo:')
         if len(places)!=0:
             for myPlace in places:
-                print(str(mone)+' '+types[mone])
+                print(str(mone)+' '+types[mone]+" place: x,y,w,h: "+str(myPlace)+', left,top,right,bottom: '+str(myPlace[0])+","+str(myPlace[1]+myPlace[3])+','+str(myPlace[0]+myPlace[2])+","+str(myPlace[1]))
                 object = obj(myPlace)
                 self.objectsC.append(object)
                 mone=mone+1
-
 
 
     def model(self):

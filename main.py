@@ -45,13 +45,8 @@ from classes import frame
 
 def program(path):
     img=cv2.imread(path)
-    # cv2.imshow('', img)
-    # cv2.waitKey(500)
-    # cv2.destroyAllWindows()
     frame1=frame(img,1)
-    cv2.imshow('', frame1.frameC)
-    cv2.waitKey(100)
-    cv2.destroyAllWindows()
+    frame1.show_img()
     # find_objects at frame _with_yolo:
     frame1.yolo_detect()
     # cut_objects_from_frame():
@@ -61,14 +56,15 @@ def program(path):
     frame1.result()
     cv2.imwrite("result.png", frame1.frameC)
     result=cv2.imread("result.png")
-    cv2.imshow('result', result)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+    frame1.show_img(img=result,txt="result",waitKey=0)
+    # cv2.imshow('result', result)
+    # cv2.waitKey(0)
+    # cv2.destroyAllWindows()
     # send_buf_to_log(buf)
     # log = getLog()
 
 
 
 
-buf = program("images/birds-flying-overcast-sky-12614779.jpg")
+buf = program("images/drone6.jpg")
 
