@@ -1,43 +1,51 @@
 from bs4 import BeautifulSoup
+import cv2
+import glob, os
 
-def read_from_xml():
 
-    # Reading the data inside the xml
-    # file to a variable under the name
-    # data
-    with open('read_from_xml/pic_1135.xml', 'r') as f:
+save_path = 'datast_xml_result'
+
+name_of_file =1
+
+completeName = os.path.join(save_path, name_of_file+".txt")
+os.
+
+
+def cut_place(image,place,base_path,name):
+
+    x=round(place[0])
+    y=round(place[1])
+    w=round(place[2])
+    h=round(place[3])
+    crop_image=image[y:y + h, x:x + w]
+    cv2.imwrite("crop_{}.{}".format(base_path, name, 'jpg'), crop_image)
+
+def read_from_xml(path_xml):
+
+    place=[]
+    with open(path_xml, 'r') as f:
         data = f.read()
 
-    # Passing the stored data inside
-    # the beautifulsoup parser, storing
-    # the returned object
     Bs_data = BeautifulSoup(data, "xml")
-    # p = Bs_data.findall('<P((.|\s)+?)</P>', str(response))
-    # Bs_data.find_all('document')[1].extract()
-    # Finding all instances of tag
-    # `unique`
-    b_unique = Bs_data.find_all('xmin')
-    x=b_unique.pop(0)
-    print(type(b_unique))
-    # print(x)
-    # str1=str(b_unique)
-    # print(str1[0])
-    print(type(x))
-    str='abc'
-    print(str[0])
-    print(str[2])
+    xmin = Bs_data.find_all('xmin')
+    ymin = Bs_data.find_all('ymin')
+    xmax = Bs_data.find_all('xmax')
+    ymax = Bs_data.find_all('ymax')
+    x=float(xmin.pop().text)
+    place.append(x)
+    y=float(ymin.pop().text)
+    place.append(y)
+    w2=float(xmax.pop().text)
+    place.append(w2-x)
+    h2=float(ymax.pop().text)
+    place.append(h2-y)
+    return place
 
+def fun(path,path_dir_save):
+    os.chdir(path)
+    for file in glob.glob("*.xml"):
+        place=read_from_xml(file)
+        img=cv2.imread(file[0:len(file)-4]+'.jpg')
+        cut_place(img,place,path_dir_save,file[0:len(file)-4])
 
-    # # Using find() to extract attributes
-    # # of the first instance of the tag
-    # b_name = Bs_data.find('child', {'name': 'Frank'})
-    #
-    # print(b_name)
-    #
-    # # Extracting the data stored in a
-    # # specific attribute of the
-    # # `child` tag
-    # value = b_name.get('test')
-    #
-    # print(value)
-read_from_xml()
+fun('dataset_xml_format','datast_xml_result')
