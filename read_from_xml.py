@@ -25,6 +25,7 @@ def read_from_xml():
     print(type(x))
     str='abc'
     print(str[0])
+    print(str[2])
 
 
     # # Using find() to extract attributes
