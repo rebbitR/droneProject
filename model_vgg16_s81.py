@@ -45,7 +45,9 @@ test_batches = ImageDataGenerator().flow_from_directory(directory=test_path,
 
 
 # still dont runing
-vgg16_model = VGG16()
+# vgg16_model = VGG16()
+vgg16_model = VGG16(weights='imagenet',include_top=False,input_shape=(81,81,3))
+
 
 model = Sequential()
 
@@ -146,6 +148,8 @@ from sklearn.metrics import confusion_matrix,classification_report
 # by the Confusion Matrix and Classification Report of sklearn
 y_pred = np.argmax(predictions, axis=1)
 print('Confusion Matrix')
+print("test_batches.classes: {}".format(test_batches.classes))
+print("y_pred: {}".format(y_pred))
 print(confusion_matrix(test_batches.classes, y_pred))
 print('Classification Report')
 print(classification_report(test_batches.classes, y_pred, target_names=classes))
