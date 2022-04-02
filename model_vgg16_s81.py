@@ -1,6 +1,7 @@
 
 
 import numpy as np
+from tensorflow import keras
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.optimizers import RMSprop
 from tensorflow.keras.callbacks import EarlyStopping
@@ -14,31 +15,30 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
 batch_size = 32
 
-train_path = 'dataset/train'
-valid_path = 'dataset/validate'
-test_path = 'dataset/test'
+train_path = 'create_dataset_2/train'
+test_path = 'create_dataset_2/test'
+# valid_path='create_dataset_2/validate'
 
-
-classes = ['airplain', 'bird', 'drone','helicopter']
+classes = ['yes','no']
 
 train_batches = ImageDataGenerator().flow_from_directory(directory=train_path,
                                             classes=classes,
                                             class_mode='categorical',
-                                            target_size=(224,224),
+                                            target_size=(81,81),
                                             batch_size=batch_size,
                                             shuffle=True)
 
-valid_batches = ImageDataGenerator().flow_from_directory(directory=valid_path,
-                                            classes=classes,
-                                            class_mode='categorical',
-                                            target_size=(224,224),
-                                            batch_size=batch_size,
-                                            shuffle=True)
+# valid_batches = ImageDataGenerator().flow_from_directory(directory=valid_path,
+#                                             classes=classes,
+#                                             class_mode='categorical',
+#                                             target_size=(81,81),
+#                                             batch_size=batch_size,
+#                                             shuffle=True)
 
 test_batches = ImageDataGenerator().flow_from_directory(directory=test_path,
                                                classes=classes,
                                                class_mode='categorical',
-                                               target_size=(224,224),
+                                               target_size=(81,81),
                                                batch_size=batch_size,
                                                shuffle=False)
 
@@ -68,11 +68,11 @@ transfer_layer = model.get_layer('block5_pool')
 conv_model = Model(inputs=conv_model.input,
                    outputs=transfer_layer.output)
 
-# # the 5 classes:
-# num_classes = 5
+# # the 2 classes:
+# num_classes = 2
 
 # the 5 classes:
-num_classes = 4
+num_classes = 2
 # start a new Keras Sequential model.
 #יצירת מודל מסוג שכבות
 new_model = Sequential()
@@ -87,7 +87,7 @@ new_model.add(Flatten())
 # add a dense (fully-connected) layer.
 # this is for combining features that the VGG16 model has
 # recognized in the image.
-new_model.add(Dense(1024, activation='relu'))
+new_model.add(Dense(81, activation='relu'))
 
 # add a dropout layer which may prevent overfitting and
 # improve generalization ability to unseen data e.g. the test set
@@ -101,6 +101,8 @@ optimizer = Adam(learning_rate=1e-5)
 
 # loss function should by 'categorical_crossentropy' for multiple classes
 # but here we better use 'binary_crossentropy' because we need to distinguish between 2 classes
+# loss = 'binary_crossentropy '
+
 loss = 'binary_crossentropy'
 print("compile_model")
 new_model.compile(optimizer=optimizer, loss=loss, metrics=['binary_accuracy'])
@@ -114,15 +116,15 @@ es = EarlyStopping(monitor='val_loss',
                    mode='auto')
 
 step_size_train=train_batches.n//train_batches.batch_size
-step_size_valid=valid_batches.n//valid_batches.batch_size
+# step_size_valid=valid_batches.n//valid_batches.batch_size
 
-history = new_model.fit_generator(train_batches,
-                        epochs=30,
-                        steps_per_epoch=step_size_train,
-                        validation_data=valid_batches,
-                        validation_steps=step_size_valid,
-                        callbacks = [es],
-                        verbose=1)
+# history = new_model.fit_generator(train_batches,
+#                         epochs=30,
+#                         steps_per_epoch=step_size_train,
+#                         validation_data=valid_batches,
+#                         validation_steps=step_size_valid,
+#                         callbacks = [es],
+#                         verbose=1)
 
 step_size_test=test_batches.n//test_batches.batch_size
 
@@ -138,20 +140,18 @@ predictions = new_model.predict_generator(test_batches,steps=step_size_test,verb
 y_pred = np.argmax(predictions,axis=1)
 
 
-# print("save_model")
-new_model.save('model_vgg2.h5')
-from sklearn.metrics import confusion_matrix
+print("save_model")
+new_model.save('model_vgg2_s81.h5')
+from sklearn.metrics import confusion_matrix,classification_report
 # by the Confusion Matrix and Classification Report of sklearn
 y_pred = np.argmax(predictions, axis=1)
 print('Confusion Matrix')
 print(confusion_matrix(test_batches.classes, y_pred))
 print('Classification Report')
-target_names = ['airplane', 'bird', 'drone','helicopter']
-# print(classification_report(test_batches.classes, y_pred, target_names=target_names))
+print(classification_report(test_batches.classes, y_pred, target_names=classes))
 
-import numpy as np
 from keras.models import load_model
-saved_model = load_model("model_vgg.h5")
+saved_model = load_model("model_vgg_s81.h5")
 
 saved_model.summary()
 

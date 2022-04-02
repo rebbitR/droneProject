@@ -2,6 +2,15 @@ from bs4 import BeautifulSoup
 import cv2
 import os
 
+def cut_place_from_path(path,x,y,h,w):
+    img=cv2.imread(path)
+    # cv2.imshow('', img)
+    # cv2.waitKey(0)
+    # cv2.destroyAllWindows()
+    crop_image=img[y:y + h, x:x + w]
+    cv2.imshow('', crop_image)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
 
 
 def cut_place(image,place,path_dir_save,name):
@@ -38,7 +47,7 @@ def read_from_xml(path_xml):
     print(place)
     return place
 
-def fun(path,path_dir_save):
+def create_dataset_from_xml(path,path_dir_save):
 
     for filename in os.listdir(path):
         print(filename[0:len(filename)-4]+'.xml')
@@ -46,5 +55,6 @@ def fun(path,path_dir_save):
         img=cv2.imread(path+'/'+filename[0:len(filename)-4]+'.jpg')
         cut_place(img,place,path_dir_save,filename[0:len(filename)-4])
 
-fun('dataset_xml_format','crop_by_xml_result')
+# fun('dataset_xml_format','crop_by_xml_result')
+# cut_place_from_path('0006.jpg',210,510,180,630)
 
