@@ -15,11 +15,16 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
 batch_size = 32
 
-train_path = 'create_dataset_2/train'
-test_path = 'create_dataset_2/test'
+# train_path = 'create_dataset_2/train'
+# test_path = 'create_dataset_2/test'
 # valid_path='create_dataset_2/validate'
 
-classes = ['yes','no']
+train_path='dataset_2_classes/dataset/train'
+test_path='dataset_2_classes/dataset/test'
+valid_path='dataset_2_classes/dataset/validate'
+
+# classes = ['yes','no']
+classes = ['airplain', 'bird', 'drone', 'helicopter','other']
 
 train_batches = ImageDataGenerator().flow_from_directory(directory=train_path,
                                             classes=classes,
@@ -28,12 +33,12 @@ train_batches = ImageDataGenerator().flow_from_directory(directory=train_path,
                                             batch_size=batch_size,
                                             shuffle=True)
 
-# valid_batches = ImageDataGenerator().flow_from_directory(directory=valid_path,
-#                                             classes=classes,
-#                                             class_mode='categorical',
-#                                             target_size=(81,81),
-#                                             batch_size=batch_size,
-#                                             shuffle=True)
+valid_batches = ImageDataGenerator().flow_from_directory(directory=valid_path,
+                                            classes=classes,
+                                            class_mode='categorical',
+                                            target_size=(81,81),
+                                            batch_size=batch_size,
+                                            shuffle=True)
 
 test_batches = ImageDataGenerator().flow_from_directory(directory=test_path,
                                                classes=classes,
@@ -70,11 +75,12 @@ transfer_layer = model.get_layer('block5_pool')
 conv_model = Model(inputs=conv_model.input,
                    outputs=transfer_layer.output)
 
-# # the 2 classes:
+# # # the 2 classes:
 # num_classes = 2
 
-# the 5 classes:
-num_classes = 2
+# # the 5 classes:
+num_classes = 5
+
 # start a new Keras Sequential model.
 #יצירת מודל מסוג שכבות
 new_model = Sequential()
@@ -105,7 +111,8 @@ optimizer = Adam(learning_rate=1e-5)
 # but here we better use 'binary_crossentropy' because we need to distinguish between 2 classes
 # loss = 'binary_crossentropy '
 
-loss = 'binary_crossentropy'
+# loss = 'binary_crossentropy'
+loss = 'categorical_crossentropy'
 print("compile_model")
 new_model.compile(optimizer=optimizer, loss=loss, metrics=['binary_accuracy'])
 
@@ -118,15 +125,15 @@ es = EarlyStopping(monitor='val_loss',
                    mode='auto')
 
 step_size_train=train_batches.n//train_batches.batch_size
-# step_size_valid=valid_batches.n//valid_batches.batch_size
+step_size_valid=valid_batches.n//valid_batches.batch_size
 
-# history = new_model.fit_generator(train_batches,
-#                         epochs=30,
-#                         steps_per_epoch=step_size_train,
-#                         validation_data=valid_batches,
-#                         validation_steps=step_size_valid,
-#                         callbacks = [es],
-#                         verbose=1)
+history = new_model.fit_generator(train_batches,
+                        epochs=30,
+                        steps_per_epoch=step_size_train,
+                        validation_data=valid_batches,
+                        validation_steps=step_size_valid,
+                        callbacks = [es],
+                        verbose=1)
 
 step_size_test=test_batches.n//test_batches.batch_size
 
@@ -143,19 +150,19 @@ y_pred = np.argmax(predictions,axis=1)
 
 
 print("save_model")
-new_model.save('model_vgg2_s81.h5')
+new_model.save('model_vgg_categorical_s81.h5')
 from sklearn.metrics import confusion_matrix,classification_report
 # by the Confusion Matrix and Classification Report of sklearn
 y_pred = np.argmax(predictions, axis=1)
 print('Confusion Matrix')
 print("test_batches.classes: {}".format(test_batches.classes))
 print("y_pred: {}".format(y_pred))
-print(confusion_matrix(test_batches.classes, y_pred))
+# print(confusion_matrix(test_batches.classes, y_pred))
 print('Classification Report')
-print(classification_report(test_batches.classes, y_pred, target_names=classes))
+# print(classification_report(test_batches.classes, y_pred, target_names=classes))
 
 from keras.models import load_model
-saved_model = load_model("model_vgg_s81.h5")
+saved_model = load_model("model_vgg_categorical_s81.h5")
 
 saved_model.summary()
 

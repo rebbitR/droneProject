@@ -1,27 +1,30 @@
 # main number 2 try option 2 with classes_try:---------
 
 from log import getLog,send_buf_to_log
-# from cut_video import cut_video_to_frame
-# import cv2
-#
-# def program(path):
-#     buf=cut_video_to_frame(path)
-#     for frame1 in buf:
-#         # find_objects at frame _with_yolo:
-#         frame1.yolo_detect()
-#         # cut_objects_from_frame():
-#         frame1.cut_objects()
-#         # find_kinds_with_model:
-#         frame1.model()
-#         frame1.result()
-#         cv2.imwrite("hhhhhhhhhh.png", frame1.frameC)
-#     # send_buf_to_log(buf)
-#     # log = getLog()
-#     return buf
-#
-#
-#
-# buf = program("video/V_AIRPLANE_001.mp4")
+from cut_video import cut_video_to_frame
+import cv2
+
+def program(path):
+    buf=cut_video_to_frame(path)
+    for frame1 in buf:
+        # find_objects at frame _with_yolo:
+        frame1.yolo_detect()
+        # cut_objects_from_frame():
+        frame1.cut_objects()
+        # find_kinds_with_model:
+        frame1.model()
+        frame1.result()
+        cv2.imshow("cropped", frame1.frameC)
+        cv2.waitKey(500)
+        cv2.destroyAllWindows()
+        # cv2.imwrite("hhhhhhhhhh.png", frame1.frameC)
+    # send_buf_to_log(buf)
+    # log = getLog()
+    return buf
+
+
+
+buf = program("video/V_BIRD_022.mp4")
 
 
 
@@ -39,32 +42,32 @@ from log import getLog,send_buf_to_log
 # for i in buf:
 #     print(i.x)
 
-# from cut_video import cut_video_to_frame
-import cv2
-from classes import frame
-
-def program(path):
-    img=cv2.imread(path)
-    frame1=frame(img,1)
-    frame1.show_img()
-    # find_objects at frame _with_yolo:
-    frame1.yolo_detect()
-    # cut_objects_from_frame():
-    frame1.cut_objects()
-    # find_kinds_with_model:
-    frame1.model()
-    frame1.result()
-    cv2.imwrite("result.png", frame1.frameC)
-    result=cv2.imread("result.png")
-    frame1.show_img(img=result,txt="result",waitKey=0)
-    # cv2.imshow('result', result)
-    # cv2.waitKey(0)
-    # cv2.destroyAllWindows()
-    # send_buf_to_log(buf)
-    # log = getLog()
-
-
-
-
-buf = program("images/V_DRONE_0011_007.png")
+# # from cut_video import cut_video_to_frame
+# import cv2
+# from classes import frame
+#
+# def program_for1(path):
+#     img=cv2.imread(path)
+#     frame1=frame(img,1)
+#     frame1.show_img()
+#     # find_objects at frame _with_yolo:
+#     frame1.yolo_detect()
+#     # cut_objects_from_frame():
+#     frame1.cut_objects()
+#     # find_kinds_with_model:
+#     frame1.model()
+#     frame1.result()
+#     cv2.imwrite("result.png", frame1.frameC)
+#     result=cv2.imread("result.png")
+#     frame1.show_img(img=result,txt="result",waitKey=0)
+#     # cv2.imshow('result', result)
+#     # cv2.waitKey(0)
+#     # cv2.destroyAllWindows()
+#     # send_buf_to_log(buf)
+#     # log = getLog()
+#
+#
+#
+#
+# buf = program_for1("images/V_DRONE_0011_007.png")
 
