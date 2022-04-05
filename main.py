@@ -12,19 +12,22 @@ def program(path):
         # cut_objects_from_frame():
         frame1.cut_objects()
         # find_kinds_with_model:
-        frame1.model()
-        frame1.result()
-        cv2.imshow("cropped", frame1.frameC)
-        cv2.waitKey(500)
-        cv2.destroyAllWindows()
-        # cv2.imwrite("hhhhhhhhhh.png", frame1.frameC)
+        frame1.model('category')
+        frame1.model('binary')
+        # frame1.result()
+        if len(frame1.objectsC)!=0:
+            for my_obg in frame1.objectsC:
+                print(my_obg.models)
+        frame1.show_img(txt='its worked!!!',waitKey=0)
+
+
     # send_buf_to_log(buf)
     # log = getLog()
     return buf
 
 
 
-buf = program("video/V_BIRD_022.mp4")
+buf = program("video/V_BIRD_005.mp4")
 
 
 
@@ -70,4 +73,6 @@ buf = program("video/V_BIRD_022.mp4")
 #
 #
 # buf = program_for1("images/V_DRONE_0011_007.png")
+
+
 

@@ -1,14 +1,14 @@
 import cv2
 import numpy as np
 from PIL import Image
-from load_model import model
+from load_model import my_model
 from yolo import yolo_detect_return_places_list
 
 
 
 class frame:
     global size
-    size=224
+    size=81
     def __init__(self,frame,second):
         self.frameC=frame
         self.secondC=second
@@ -75,39 +75,56 @@ class frame:
                 elif h<size:
                     h=size
                 crop_img = self.frameC[y:y + h, x:x + w]
-                self.show_img(img=crop_img,txt='before')
+                # self.show_img(img=crop_img,txt='before')
                 crop_img = self.changeResolution2(crop_img)
             else:
+                # # with white:
+                # crop_img = self.frameC[y:y + h, x:x + w]
+                # # self.show_img(img=crop_img,txt='before')
+                # crop_img = self.white(crop_img)
+
+                # without white:
+                w = size
+                h = size
                 crop_img = self.frameC[y:y + h, x:x + w]
-                self.show_img(img=crop_img,txt='before')
-                crop_img = self.white(crop_img)
-            self.show_img(img=crop_img,txt='after')
+            # self.show_img(img=crop_img,txt='after')
             self.objectsC[mone].objectC=crop_img
             mone=mone+1
 
 
     def yolo_detect(self):
-        places,types = yolo_detect_return_places_list(self.frameC)
+        places,types,confs = yolo_detect_return_places_list(self.frameC)
         mone=0
-        print('yolo:')
+        # print('yolo:')
         if len(places)!=0:
-            for myPlace in places:
-                print(str(mone)+' '+types[mone]+" place: x,y,w,h: "+str(myPlace)+', left,top,right,bottom: '+str(myPlace[0])+","+str(myPlace[1]+myPlace[3])+','+str(myPlace[0]+myPlace[2])+","+str(myPlace[1]))
-                object = obj(myPlace)
+            for i in range(len(places)):
+                # print(str(mone)+' '+types[mone]+" place: x,y,w,h: "+str(places[i])+', left,top,right,bottom: '+str(places[i][0])+","+str(places[i][1]+places[i][3])+','+str(places[i][0]+places[i][2])+","+str(places[i][1]))
+                object = obj(places[i],yolo=types[i])
                 self.objectsC.append(object)
                 mone=mone+1
 
 
-    def model(self):
+    def model(self,type):
         mone=0
-        print('model:')
+        # print('model:')
         for obj1 in self.objectsC:
             cv2.imwrite("object.png", obj1.objectC)
-            i=model("object.png",size)
-            classes = ['airplain', 'bird', 'drone', 'helicopter']
-            print(str(mone)+' '+classes[i])
-            self.objectsC[mone].kindC = classes[i]
+            i,kind = my_model("object.png", size, type)
+            if kind=='ERROR':
+                break
+            # print(str(mone)+' '+kind)
+            self.objectsC[mone].models[type] = kind
             mone = mone + 1
+
+    # def check(self):
+    #     if len(self.objectsC)!=0:
+    #         for my_obg in self.objectsC:
+    #             if my_obg.models['yolo']=='airplane' or my_obg.models['yolo']=='bird' or my_obg.models['yolo']=='kite':
+    #                 if my_obg.models['category']=='drone' or my_obg.models['binary']=='drone'
+    #                     my_obg.kindC=='drone'
+    #             else:
+
+
 
     def rectangle(self,frame, left, top, right, bottom, R, B, G):
         return cv2.rectangle(frame, (left, top), (right, bottom), (B, G, R), 2)
@@ -121,7 +138,7 @@ class frame:
                     R=255
                     B=0
                     G=0
-                elif myObg.kindC=='airplain':
+                elif myObg.kindC=='airplane':
                     # blue
                     R=0
                     B=255
@@ -136,6 +153,11 @@ class frame:
                     R=0
                     B=0
                     G=0
+                else:
+                    # white
+                    R=255
+                    B=255
+                    G=255
                 self.frameC=self.rectangle(self.frameC,
                                       myObg.placeC.xC,
                                       myObg.placeC.yC+myObg.placeC.hC,
@@ -155,9 +177,10 @@ class place:
 
 
 class obj:
-    def __init__(self,place1,object=None,kind=None):
+    def __init__(self,place1,object=None,kind=None,yolo='nuthing',category='nuthing',binary='nuthing'):
         my_place=place(place1[0],place1[1],place1[2],place1[3])
         self.placeC=my_place
         self.objectC=object
+        self.models={'yolo':yolo,'category':category,'binary':binary}
         self.kindC=kind
 
