@@ -112,7 +112,7 @@ class frame:
             i,kind = my_model("object.png", size, type)
             if kind=='ERROR':
                 break
-            # print(str(mone)+' '+kind)
+            print(str(mone)+' '+kind)
             self.objectsC[mone].models[type] = kind
             mone = mone + 1
 
@@ -133,6 +133,7 @@ class frame:
     def result(self):
         if len(self.objectsC)!=0:
             for myObg in self.objectsC:
+                myObg.kindC=myObg.models['category']
                 if myObg.kindC=='drone':
                     # red
                     R=255

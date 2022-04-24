@@ -69,14 +69,74 @@ def cut_video_to_frame(video_path: str):
 
 # # try
 #
-# buf=cut_video_to_frame("video/try/sea.avi")
-# # print(type(buf[0].frameC))
+# buf=cut_video_to_frame("")
+# print(type(buf[0].frameC))
+# mone=0
 # for frame in buf:
-#     cv2.imshow("cropped", frame.frameC)
 #     print(type(frame.frameC))
-#     cv2.waitKey(500)
+#     cv2.imshow("cropped", frame.frameC)
+#
+#     cv2.waitKey(50)
 #     cv2.destroyAllWindows()
+#     mone = mone + 1
+# print(mone)
 
+def framestovideo(list=[]):
+  image_folder = 'imeges'
+  video_name = r'C:\Users\רננה קייקוב\PycharmProjects\droneProject11111\video\videoneww1.mp4'
+
+  #images = [img for img in os.listdir(image_folder) if img.endswith(".jpg")]
+  #frame = cv2.imread(os.path.join(image_folder, list[0]))
+  #frame = cv2.imread( list[0])
+
+  #height, width, layers = frame.shape
+  height, width, layers = list[0].shape
+  video = cv2.VideoWriter(video_name, 0, 12, (width,height))
+
+  for image in list:
+    #video.write(cv2.imread(os.path.join(image_folder, image)))
+    video.write(image)
+
+  cv2.destroyAllWindows()
+
+  video.release()
+  #הוספת שמע לסרטון
+  #adiuo=cv2.
+  #ffmpeg.output(audio_stream, video, 'out.mp4').run()
+
+def videotoframes(video):
+ vidcap = cv2.VideoCapture(video)
+#שמירת השמע
+ #clip = mp.VideoFileClip(video).subclip(0, 20)
+ #clip.audio.write_audiofile(r"my_result.mp3")
+ list=[]
+ def getFrame(sec):
+   vidcap.set(cv2.CAP_PROP_POS_MSEC,sec*1000)
+   hasFrames,image = vidcap.read()
+
+   if hasFrames:
+    list.append(image)
+
+    #cv2.imwrite("image"+str(count)+".jpg", image)     # save frame as JPG file
+    return hasFrames
+ sec = 0
+ frameRate = 0.08 #//it will capture image in each 0.5 second
+ count=1
+ success = getFrame(sec)
+ while success:
+   count = count + 1
+   sec = sec + frameRate
+   sec = round(sec, 2)
+   success = getFrame(sec)
+ return list
+
+
+list=videotoframes('video/V_AIRPLANE_048.mp4')
+for i in list:
+    cv2.imshow('txt', i)
+    cv2.waitKey(101)
+    cv2.destroyAllWindows()
+framestovideo(list)
 
 
 

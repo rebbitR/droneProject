@@ -1,7 +1,7 @@
 # main number 2 try option 2 with classes_try:---------
 
 from log import getLog,send_buf_to_log
-from cut_video import cut_video_to_frame
+from cut_video import cut_video_to_frame,framestovideo
 import cv2
 
 def program(path):
@@ -13,66 +13,25 @@ def program(path):
         frame1.cut_objects()
         # find_kinds_with_model:
         frame1.model('category')
-        frame1.model('binary')
-        # frame1.result()
-        if len(frame1.objectsC)!=0:
-            for my_obg in frame1.objectsC:
-                print(my_obg.models)
-        frame1.show_img(txt='its worked!!!',waitKey=0)
-
+        # frame1.model('binary')
+        frame1.result()
+        frame1.show_img()
+        # if len(frame1.objectsC)!=0:
+        #     for my_obg in frame1.objectsC:
+        #         print(my_obg.models)
+        # frame1.show_img(txt='its worked!!!',waitKey=0)
 
     # send_buf_to_log(buf)
     # log = getLog()
     return buf
 
+buf = program("video/V_AIRPLANE_048.mp4")
+buf_2=[]
+for i in buf:
+    buf_2.append(i.frameC)
 
+framestovideo(buf_2)
 
-buf = program("video/V_BIRD_005.mp4")
-
-
-
-# from classes import try1
-# one=try1(1)
-# two=try1(2)
-# three=try1(3)
-# print(one.x)
-# buf=[]
-# buf.append(one)
-# buf.append(two)
-# buf.append(three)
-# for i in buf:
-#     i.replace()
-# for i in buf:
-#     print(i.x)
-
-# # from cut_video import cut_video_to_frame
-# import cv2
-# from classes import frame
-#
-# def program_for1(path):
-#     img=cv2.imread(path)
-#     frame1=frame(img,1)
-#     frame1.show_img()
-#     # find_objects at frame _with_yolo:
-#     frame1.yolo_detect()
-#     # cut_objects_from_frame():
-#     frame1.cut_objects()
-#     # find_kinds_with_model:
-#     frame1.model()
-#     frame1.result()
-#     cv2.imwrite("result.png", frame1.frameC)
-#     result=cv2.imread("result.png")
-#     frame1.show_img(img=result,txt="result",waitKey=0)
-#     # cv2.imshow('result', result)
-#     # cv2.waitKey(0)
-#     # cv2.destroyAllWindows()
-#     # send_buf_to_log(buf)
-#     # log = getLog()
-#
-#
-#
-#
-# buf = program_for1("images/V_DRONE_0011_007.png")
 
 
 
