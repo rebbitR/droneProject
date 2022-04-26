@@ -82,7 +82,7 @@ def cut_video_to_frame(video_path: str):
 # print(mone)
 
 def framestovideo(list=[]):
-  image_folder = 'imeges'
+  image_folder = 'images'
   video_name = r'C:\Users\רננה קייקוב\PycharmProjects\droneProject11111\video\videoneww1.mp4'
 
   #images = [img for img in os.listdir(image_folder) if img.endswith(".jpg")]
@@ -131,12 +131,39 @@ def videotoframes(video):
  return list
 
 
-# list=videotoframes('video/V_AIRPLANE_048.mp4')
-# for i in list:
-#     cv2.imshow('txt', i)
-#     cv2.waitKey(101)
-#     cv2.destroyAllWindows()
-# framestovideo(list)
+import cv2
+import numpy as np
+import glob
+def test2(list=[]):
+    height, width, layers = list[0].shape
+    frameSize = (500, 500)
+    print(height, width)
+    out = cv2.VideoWriter('output2_video.avi', cv2.VideoWriter_fourcc(*'DIVX'), 60, frameSize)
+
+    for img in list:
+        out.write(img)
+
+    out.release()
+
+def test(list):
+    height, width, layers = list[0].shape
+    print(height,width)
+    frameSize = (490, 500)
+
+    out = cv2.VideoWriter('output_video.mp4', cv2.VideoWriter_fourcc(*'DIVX'), 60, frameSize)
+
+    for i in range(0, 255):
+        img = np.ones((490, 500, 3), dtype=np.uint8) * i
+        out.write(img)
+
+    out.release()
+
+list=videotoframes('video/V_BIRD_022.mp4')
+for i in list:
+    cv2.imshow('txt', i)
+    cv2.waitKey(1)
+    cv2.destroyAllWindows()
+test2(list)
 
 
 
