@@ -131,12 +131,12 @@ def videotoframes(video):
  return list
 
 
-list=videotoframes('video/V_AIRPLANE_048.mp4')
-for i in list:
-    cv2.imshow('txt', i)
-    cv2.waitKey(101)
-    cv2.destroyAllWindows()
-framestovideo(list)
+# list=videotoframes('video/V_AIRPLANE_048.mp4')
+# for i in list:
+#     cv2.imshow('txt', i)
+#     cv2.waitKey(101)
+#     cv2.destroyAllWindows()
+# framestovideo(list)
 
 
 

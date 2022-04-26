@@ -1,7 +1,7 @@
 # main number 2 try option 2 with classes_try:---------
 
 from log import getLog,send_buf_to_log
-from cut_video import cut_video_to_frame,framestovideo
+from cut_video import cut_video_to_frame
 import cv2
 
 def program(path):
@@ -9,13 +9,14 @@ def program(path):
     for frame1 in buf:
         # find_objects at frame _with_yolo:
         frame1.yolo_detect()
+
         # cut_objects_from_frame():
         frame1.cut_objects()
         # find_kinds_with_model:
         frame1.model('category')
         # frame1.model('binary')
         frame1.result()
-        frame1.show_img()
+        # frame1.show_img()
         # if len(frame1.objectsC)!=0:
         #     for my_obg in frame1.objectsC:
         #         print(my_obg.models)
@@ -25,12 +26,14 @@ def program(path):
     # log = getLog()
     return buf
 
-buf = program("video/V_AIRPLANE_048.mp4")
-buf_2=[]
+buf = program("video/V_DRONE_022.mp4")
 for i in buf:
-    buf_2.append(i.frameC)
-
-framestovideo(buf_2)
+    i.show_img(txt='result')
+# buf_2=[]
+# for i in buf:
+#     buf_2.append(i.frameC)
+#
+# framestovideo(buf_2)
 
 
 
