@@ -117,11 +117,11 @@ class frame:
             numObj = numObj + 1
 
     def print_results_frame(self):
-        print('second: '+str(self.secondC))
-        print('num object: '+str(len(self.objectsC)))
+        print('--second: '+str(self.secondC))
+        print('  num objects: '+str(len(self.objectsC)))
         numObj = 0
         for my_obj in self.objectsC:
-            print('object number '+str(numObj))
+            print('   object number '+str(numObj))
             my_obj.print_results_obj()
             numObj = numObj + 1
 
@@ -142,32 +142,22 @@ class frame:
     def result(self):
         if len(self.objectsC)!=0:
             for myObg in self.objectsC:
-                myObg.kindC=myObg.models['resnet_50']
+                myObg.kindC=myObg.models['yolo']
                 if myObg.kindC=='drone':
                     # red
-                    R=255
-                    B=0
-                    G=0
+                    R=255;B=0;G=0
                 elif myObg.kindC=='airplane':
                     # blue
-                    R=0
-                    B=255
-                    G=0
+                    R=0;B=255;G=0
                 elif myObg.kindC=='bird':
                     # green
-                    R=0
-                    B=0
-                    G=255
+                    R=0;B=0;G=255
                 elif myObg.kindC=='helicopter':
                     # black
-                    R=0
-                    B=0
-                    G=0
+                    R=0;B=0;G=0
                 else:
                     # white
-                    R=255
-                    B=255
-                    G=255
+                    R=255;B=255;G=255
                 self.frameC=self.rectangle(self.frameC,
                                       myObg.placeC.xC,
                                       myObg.placeC.yC+myObg.placeC.hC,

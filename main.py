@@ -13,7 +13,7 @@ def program(path):
         # cut_objects_from_frame():
         frame1.cut_objects()
         # find_kinds_with_model:
-        frame1.model('resnet_50')
+        # frame1.model('resnet_50')
         frame1.model('binary_vgg16')
         frame1.model('category_vgg16')
         frame1.result()
