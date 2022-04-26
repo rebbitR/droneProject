@@ -105,16 +105,25 @@ class frame:
 
 
     def model(self,type):
-        mone=0
+        numObj=0
         # print('model:')
         for obj1 in self.objectsC:
             cv2.imwrite("object.png", obj1.objectC)
             i,kind = my_model("object.png", size, type)
             if kind=='ERROR':
                 break
-            print(str(mone)+' '+kind)
-            self.objectsC[mone].models[type] = kind
-            mone = mone + 1
+            # print(type+': '+str(numObj)+' '+kind)
+            self.objectsC[numObj].models[type] = kind
+            numObj = numObj + 1
+
+    def print_results_frame(self):
+        print('second: '+str(self.secondC))
+        print('num object: '+str(len(self.objectsC)))
+        numObj = 0
+        for my_obj in self.objectsC:
+            print('object number '+str(numObj))
+            my_obj.print_results_obj()
+            numObj = numObj + 1
 
     # def check(self):
     #     if len(self.objectsC)!=0:
@@ -133,7 +142,7 @@ class frame:
     def result(self):
         if len(self.objectsC)!=0:
             for myObg in self.objectsC:
-                myObg.kindC=myObg.models['category']
+                myObg.kindC=myObg.models['resnet_50']
                 if myObg.kindC=='drone':
                     # red
                     R=255
@@ -178,10 +187,13 @@ class place:
 
 
 class obj:
-    def __init__(self,place1,object=None,kind=None,yolo='nuthing',category='nuthing',binary='nuthing'):
+    def __init__(self,place1,object=None,kind=None,yolo='None',category_vgg16='None',binary_vgg16='None',resnet_50='None'):
         my_place=place(place1[0],place1[1],place1[2],place1[3])
         self.placeC=my_place
         self.objectC=object
-        self.models={'yolo':yolo,'category':category,'binary':binary}
+        self.models={'yolo':yolo,'category_vgg16':category_vgg16,'binary_vgg16':binary_vgg16,'resnet_50':resnet_50}
         self.kindC=kind
+
+    def print_results_obj(self):
+        print(self.models)
 
