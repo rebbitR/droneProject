@@ -81,28 +81,7 @@ def cut_video_to_frame(video_path: str):
 #     mone = mone + 1
 # print(mone)
 
-def framestovideo(list=[]):
-  image_folder = 'images'
-  video_name = r'C:\Users\רננה קייקוב\PycharmProjects\droneProject11111\video\videoneww1.mp4'
 
-  #images = [img for img in os.listdir(image_folder) if img.endswith(".jpg")]
-  #frame = cv2.imread(os.path.join(image_folder, list[0]))
-  #frame = cv2.imread( list[0])
-
-  #height, width, layers = frame.shape
-  height, width, layers = list[0].shape
-  video = cv2.VideoWriter(video_name, 0, 12, (width,height))
-
-  for image in list:
-    #video.write(cv2.imread(os.path.join(image_folder, image)))
-    video.write(image)
-
-  cv2.destroyAllWindows()
-
-  video.release()
-  #הוספת שמע לסרטון
-  #adiuo=cv2.
-  #ffmpeg.output(audio_stream, video, 'out.mp4').run()
 
 def videotoframes(video):
  vidcap = cv2.VideoCapture(video)
@@ -134,36 +113,65 @@ def videotoframes(video):
 import cv2
 import numpy as np
 import glob
+
 def test2(list=[]):
     height, width, layers = list[0].shape
     frameSize = (500, 500)
     print(height, width)
-    out = cv2.VideoWriter('output2_video.avi', cv2.VideoWriter_fourcc(*'DIVX'), 60, frameSize)
+    out = cv2.VideoWriter('output2_video.mp4', cv2.VideoWriter_fourcc(*'DIVX'), 60, frameSize)
 
     for img in list:
         out.write(img)
 
+    # for i in range(0, 255):
+    #     img = np.ones((500, 500, 3), dtype=np.uint8) * i
+    #     out.write(img)
+
+    # cv2.destroyAllWindows()
     out.release()
 
-def test(list):
-    height, width, layers = list[0].shape
-    print(height,width)
-    frameSize = (490, 500)
+from dataset import changeResolution2
+def cut_place(image,place,size):
+    # print(place)
+    x=round(float(place[0]))
+    y=round(float(place[1]))
+    w = round(float(place[2]))
+    h = round(float(place[3]))
+    # count=h*w
+    # print(count, "pixels")
+    buf_img=[]
+    if(h>size or w>size):
+        if(h<size):
+            h=size
+        elif(w<size):
+            w=size
+        crop_img = image[y:y + h, x:x + w]
+        crop_img=changeResolution2(crop_img,size)
 
-    out = cv2.VideoWriter('output_video.mp4', cv2.VideoWriter_fourcc(*'DIVX'), 60, frameSize)
+    else:
+        w=size
+        h=size
+        crop_img = image[y:y + h, x:x + w]
 
-    for i in range(0, 255):
-        img = np.ones((490, 500, 3), dtype=np.uint8) * i
-        out.write(img)
 
-    out.release()
+    return crop_img
 
-list=videotoframes('video/V_BIRD_022.mp4')
+list=videotoframes('video/V_BIRD_005.mp4')
+newList=[]
 for i in list:
-    cv2.imshow('txt', i)
-    cv2.waitKey(1)
+    height, width, layers=i.shape
+    print(height,width)
+    cv2.imshow('before', i)
+    cv2.waitKey(100)
     cv2.destroyAllWindows()
-test2(list)
+    newi=cut_place(i,[0,0,0,0],500)
+    height, width, layers=newi.shape
+    print(height,width)
+    cv2.imshow('after', newi)
+    cv2.waitKey(100)
+    cv2.destroyAllWindows()
+
+# test2(list)
 
 
 

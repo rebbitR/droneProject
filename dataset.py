@@ -318,7 +318,7 @@ def create_dataset_from_csv(csv, frame_dir: str,size,name="image", ext="jpg"):
 # create_dataset_with_yolo_places('baloon','baloon_dataset',size)
 
 # split_train_test_validation:---------------------------------------------
-from sklearn.model_selection import train_test_split
+# from sklearn.model_selection import train_test_split
 import os
 import shutil
 
@@ -450,4 +450,4 @@ def split_train_test_validation(base_dir_airplane, base_dir_helicopter,base_dir_
 
 
 #split_train_test_validation("Data/airplain", "Data/helicopter","Data/bird","Data/drone")
-split_train_test_validation("dataset_2_classes/airplane", "dataset_2_classes/helicopter","dataset_2_classes/bird","dataset_2_classes/drone","dataset_2_classes/other")
+# split_train_test_validation("dataset_2_classes/airplane", "dataset_2_classes/helicopter","dataset_2_classes/bird","dataset_2_classes/drone","dataset_2_classes/other")
