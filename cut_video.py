@@ -118,7 +118,7 @@ def test2(list=[]):
     height, width, layers = list[0].shape
     frameSize = (500, 500)
     print(height, width)
-    out = cv2.VideoWriter('output2_video.mp4', cv2.VideoWriter_fourcc(*'DIVX'), 60, frameSize)
+    out = cv2.VideoWriter('output3_video.mp4', cv2.VideoWriter_fourcc(*'DIVX'), 60, frameSize)
 
     for img in list:
         out.write(img)
@@ -156,21 +156,26 @@ def cut_place(image,place,size):
 
     return crop_img
 
-list=videotoframes('video/V_BIRD_005.mp4')
-newList=[]
-for i in list:
-    height, width, layers=i.shape
-    print(height,width)
-    cv2.imshow('before', i)
-    cv2.waitKey(100)
-    cv2.destroyAllWindows()
-    newi=cut_place(i,[0,0,0,0],500)
-    height, width, layers=newi.shape
-    print(height,width)
-    cv2.imshow('after', newi)
-    cv2.waitKey(100)
-    cv2.destroyAllWindows()
-
+# list=videotoframes('D:/קבצים גדולים פרוייקט רננה/video/V_AIRPLANE_048')
+# newList=[]
+# for i in list:
+#     height, width, layers=i.shape
+#     print(height,width)
+#     # cv2.imshow('before', i)
+#     # cv2.waitKey(100)
+#     # cv2.destroyAllWindows()
+#     newi=cut_place(i,[0,0,0,0],500)
+#     height, width, layers=newi.shape
+#     print(height,width)
+#     # cv2.imshow('after', newi)
+#     # cv2.waitKey(100)
+#     # cv2.destroyAllWindows()
+#     newList.append(newi)
+#
+# # for i in newList:
+# #     cv2.imshow('txt', i)
+# #     cv2.waitKey(100)
+# #     cv2.destroyAllWindows()
 # test2(list)
 
 
