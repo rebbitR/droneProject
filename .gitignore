@@ -157,3 +157,4 @@ cython_debug/
 model_vgg2.h5
 model_vgg_categorical_s81.h5
 model_vgg_s81.h5
+pred_drone_5_classes_restnet_50_2.h5
