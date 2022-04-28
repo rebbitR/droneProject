@@ -142,7 +142,7 @@ class frame:
     def result(self):
         if len(self.objectsC)!=0:
             for myObg in self.objectsC:
-                myObg.kindC=myObg.models['yolo']
+                myObg.kindC=myObg.models['resnet_50']
                 if myObg.kindC=='drone':
                     # red
                     R=255;B=0;G=0
