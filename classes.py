@@ -1,10 +1,10 @@
 import cv2
 import numpy as np
-from PIL import Image
+
 from load_model import my_model
 from yolo import yolo_detect_return_places_list
 
-
+from PIL import Image
 
 class frame:
     global size
@@ -56,6 +56,14 @@ class frame:
         return result
 
 
+    def tryAddTxt(self):
+        font = cv2.FONT_HERSHEY_PLAIN
+        fontScale=1.3
+        color=(255, 255, 255)
+        thickness=1
+        for my_obj in self.objectsC:
+            cv2.putText(self.frameC, my_obj.kindC, (my_obj.placeC.xC, my_obj.placeC.yC), font,
+                            fontScale, color, thickness, cv2.LINE_AA)
 
     # function that get image and place and return fix image for the model:
     # the place must be: [x,y,w,h]
