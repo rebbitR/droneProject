@@ -1,12 +1,11 @@
 
 import cv2
-# from os import makedirs
-# from os.path import splitext, dirname, basename, join
 import classes
 
+# from os import makedirs
+# from os.path import splitext, dirname, basename, join
 
-
-def cut_video_to_frame(video_path: str):
+def cut_video_by_second(video_path: str):
 
     cap = cv2.VideoCapture(video_path)
 
@@ -34,9 +33,6 @@ def cut_video_to_frame(video_path: str):
                 # cv2.imwrite("{}_{}.{}".format(base_path, "0000", ext),
                 #             frame)
                 second = 0
-                # cv2.imshow('',frame)
-                # cv2.waitKey(500)
-                # cv2.destroyAllWindows()
 
                 myf1 = classes.frame(frame, second)
                 buf.append(myf1)
@@ -48,13 +44,6 @@ def cut_video_to_frame(video_path: str):
                 second = int(cap.get(cv2.CAP_PROP_POS_FRAMES)/idx)
                 # print(second)
                 # filled_second = str(second).zfill(4)
-                # print(filled_second)
-                # print(base_path)
-                # print(ext)
-                # print(idx)
-                # cv2.imshow('',frame)
-                # cv2.waitKey(500)
-                # cv2.destroyAllWindows()
 
                 myf1 =classes.frame(frame, second)
                 # cv2.imwrite("{}_{}.{}".format(base_path, filled_second, ext),
@@ -66,28 +55,9 @@ def cut_video_to_frame(video_path: str):
 
     return buf
 
-
-# # try
-#
-# buf=cut_video_to_frame("")
-# print(type(buf[0].frameC))
-# mone=0
-# for frame in buf:
-#     print(type(frame.frameC))
-#     cv2.imshow("cropped", frame.frameC)
-#
-#     cv2.waitKey(50)
-#     cv2.destroyAllWindows()
-#     mone = mone + 1
-# print(mone)
-
-
-
 def videotoframes(video):
  vidcap = cv2.VideoCapture(video)
-#שמירת השמע
- #clip = mp.VideoFileClip(video).subclip(0, 20)
- #clip.audio.write_audiofile(r"my_result.mp3")
+
  list=[]
  def getFrame(sec):
    vidcap.set(cv2.CAP_PROP_POS_MSEC,sec*1000)
@@ -109,74 +79,20 @@ def videotoframes(video):
    success = getFrame(sec)
  return list
 
-
-import cv2
-import numpy as np
-import glob
-
-def test2(list=[]):
+def framestovideo(video_name,list=[]):
     height, width, layers = list[0].shape
-    frameSize = (500, 500)
-    print(height, width)
-    out = cv2.VideoWriter('output3_video.mp4', cv2.VideoWriter_fourcc(*'DIVX'), 60, frameSize)
-
+    frameSize = (width,height)
+    # print(height, width)
+    out = cv2.VideoWriter(video_name, 0, 12, frameSize)
     for img in list:
         out.write(img)
 
-    # for i in range(0, 255):
-    #     img = np.ones((500, 500, 3), dtype=np.uint8) * i
-    #     out.write(img)
-
-    # cv2.destroyAllWindows()
+    cv2.destroyAllWindows()
     out.release()
 
-from dataset import changeResolution2
-def cut_place(image,place,size):
-    # print(place)
-    x=round(float(place[0]))
-    y=round(float(place[1]))
-    w = round(float(place[2]))
-    h = round(float(place[3]))
-    # count=h*w
-    # print(count, "pixels")
-    buf_img=[]
-    if(h>size or w>size):
-        if(h<size):
-            h=size
-        elif(w<size):
-            w=size
-        crop_img = image[y:y + h, x:x + w]
-        crop_img=changeResolution2(crop_img,size)
 
-    else:
-        w=size
-        h=size
-        crop_img = image[y:y + h, x:x + w]
+# list=videotoframes('D:/droneProject111/video/V_BIRD_005.mp4')
 
-
-    return crop_img
-
-# list=videotoframes('D:/קבצים גדולים פרוייקט רננה/video/V_AIRPLANE_048')
-# newList=[]
-# for i in list:
-#     height, width, layers=i.shape
-#     print(height,width)
-#     # cv2.imshow('before', i)
-#     # cv2.waitKey(100)
-#     # cv2.destroyAllWindows()
-#     newi=cut_place(i,[0,0,0,0],500)
-#     height, width, layers=newi.shape
-#     print(height,width)
-#     # cv2.imshow('after', newi)
-#     # cv2.waitKey(100)
-#     # cv2.destroyAllWindows()
-#     newList.append(newi)
-#
-# # for i in newList:
-# #     cv2.imshow('txt', i)
-# #     cv2.waitKey(100)
-# #     cv2.destroyAllWindows()
-# test2(list)
 
 
 
