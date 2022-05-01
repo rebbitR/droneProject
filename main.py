@@ -1,21 +1,22 @@
 # main number 2 try option 2 with classes_try:---------
 import classes
 from log import getLog,send_buf_to_log
-from cut_video import cut_video_to_frame,videotoframes
+from cut_video import cut_video_by_second,videotoframes,framestovideo
 
 import time
 
 import cv2
 
-def program(path):
+
+def main(path):
     t1=time.time()
-    buf=cut_video_to_frame(path)
+    buf=cut_video_by_second(path)
     # buf1=videotoframes(path)
     # buf=[]
     # for i in range(len(buf1)-1):
     #     frame=classes.frame(buf1[i],i)
     #     buf.append(frame)
-    #     print(type(buf[i]))
+    #     # print(type(buf[i]))
     # print(len(buf))
     for frame1 in buf:
         # find_objects at frame _with_yolo:
@@ -29,6 +30,7 @@ def program(path):
         frame1.model('category_vgg16')
         frame1.result()
         frame1.print_results_frame()
+        frame1.tryAddTxt()
         # frame1.show_img()
         # if len(frame1.objectsC)!=0:
         #     for my_obg in frame1.objectsC:
@@ -45,14 +47,15 @@ def program(path):
 
     return buf
 
-buf = program("video/V_DRONE_027.mp4")
-for i in buf:
-    i.show_img(txt='result',waitKey=0)
-# buf_2=[]
+# buf = program("video/V_AIRPLANE_038.mp4")
 # for i in buf:
-#     buf_2.append(i.frameC)
-#
-# framestovideo(buf_2)
+#     i.show_img()
+
+# buf1=[]
+# for i in buf:
+#     buf1.append(i.frameC)
+# framestovideo(buf1)
+
 
 
 
