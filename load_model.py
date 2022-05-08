@@ -25,7 +25,7 @@ def my_model(path,size,type):
     img = np.expand_dims(img, axis=0)
     output = saved_model.predict(img)
     i = np.argmax(output)
-    return i,classes[i]
+    return output,i,classes[i]
 
 # i,kind=my_model('create_dataset_s81/airplane_close_csv/image_0226.jpg',81,'hbh')
 # print(str(i)+' '+kind)

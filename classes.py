@@ -117,11 +117,12 @@ class frame:
         # print('model:')
         for obj1 in self.objectsC:
             cv2.imwrite("object.png", obj1.objectC)
-            i,kind = my_model("object.png", size, type)
+            output,i,kind = my_model("object.png", size, type)
             if kind=='ERROR':
                 break
             # print(type+': '+str(numObj)+' '+kind)
             self.objectsC[numObj].models[type] = kind
+            print('output: '+str(output))
             numObj = numObj + 1
 
     def print_results_frame(self):

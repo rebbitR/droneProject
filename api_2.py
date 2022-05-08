@@ -4,9 +4,7 @@ import numpy as np
 import os
 from flask import Flask, request, jsonify, json
 from flask_cors import CORS
-# import face_recognition as fr
 from classes import frame
-# import moviepy.editor as mp
 from main import main
 from os.path import isfile, join
 from cut_video import framestovideo

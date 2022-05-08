@@ -4,6 +4,7 @@ from log import getLog,send_buf_to_log
 from cut_video import cut_video_by_second,videotoframes,framestovideo
 
 import cv2
+from multiprocessing import Pool
 
 from datetime import datetime
 
@@ -53,6 +54,9 @@ def main(path):
         # cut_objects_from_frame():
         frame1.cut_objects()
         # find_kinds_with_model:
+        with Pool(3) as p:
+            p.map(frame1.model, 'resnet_50')
+            count1 = p.map(count_name, list)
         frame1.model('resnet_50')
         # frame1.model('binary_vgg16')
         # frame1.model('category_vgg16')
