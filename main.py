@@ -54,10 +54,10 @@ def main(path):
         # cut_objects_from_frame():
         frame1.cut_objects()
         # find_kinds_with_model:
+        # try multiprocessing
         with Pool(3) as p:
-            p.map(frame1.model, 'resnet_50')
-            count1 = p.map(count_name, list)
-        frame1.model('resnet_50')
+            p.map(frame1.model, ['resnet_50', 'binary_vgg16', 'category_vgg16'])
+        # frame1.model('resnet_50')
         # frame1.model('binary_vgg16')
         # frame1.model('category_vgg16')
         frame1.result()
@@ -79,14 +79,14 @@ def main(path):
     return buf
 
 
-# buf = main("video/V_DRONE_001.mp4")
+buf = main("video/V_AIRPLANE_042.mp4")
 # for i in buf:
 #     i.show_img()
 
-# buf1=[]
-# for i in buf:
-#     buf1.append(i.frameC)
-# framestovideo(buf1)
+buf1=[]
+for i in buf:
+    buf1.append(i.frameC)
+framestovideo("airplane-res.mp4",buf1)
 
 
 

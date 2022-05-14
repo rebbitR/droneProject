@@ -1,22 +1,20 @@
 
 # create_dataset_from_csv:----------------------------
-import cv2
 from bs4 import BeautifulSoup
 import pandas as pd
 from os import makedirs
 from os.path import splitext, dirname, basename, join
 import numpy
 from yolo import yolo_detect_return_places_list
-from PIL import Image
 import numpy as np
 from numpy import asarray
+from PIL import Image
 
 
 # Importing necessary functions
-from keras.preprocessing.image import ImageDataGenerator, array_to_img, img_to_array, load_img
+from keras.preprocessing.image import ImageDataGenerator,img_to_array, array_to_img, load_img
 import os
 import cv2
-from PIL import Image
 
 # Initialising the ImageDataGenerator class.
 # We will pass in the augmentation parameters in the constructor.

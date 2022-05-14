@@ -22,8 +22,10 @@ CORS(app)
 @app.route('/post', methods=['POST'])
 def program():
 
-    video_path="D:/react/src/video/myvideo_1.mp4"
-    res_video_path='D:/react/src/video/videoneww_1.mp4'
+    # video_path="D:/react/src/video/myvideo_1.mp4"
+    # res_video_path='D:/react/src/video/videoneww_1.mp4'
+    video_path=r'C:\Users\רננה קייקוב\Desktop\Project\droneProject-client\react\src\video\myvideo_1.mp4'
+    res_video_path=r'C:\Users\רננה קייקוב\Desktop\Project\droneProject-client\react\src\video\videoneww_1.mp4'
 
     file = request.files['myFile']
     file.save(video_path)
