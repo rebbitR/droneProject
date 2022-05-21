@@ -24,7 +24,7 @@ test_path='dataset_2_classes/dataset/test'
 valid_path='dataset_2_classes/dataset/validate'
 
 # classes = ['yes','no']
-classes = ['airplain', 'bird', 'drone', 'helicopter','other']
+classes = ['airplane', 'bird', 'drone', 'helicopter','other']
 
 train_batches = ImageDataGenerator().flow_from_directory(directory=train_path,
                                             classes=classes,
@@ -48,18 +48,14 @@ test_batches = ImageDataGenerator().flow_from_directory(directory=test_path,
                                                shuffle=False)
 
 
-
-# still dont runing
 # vgg16_model = VGG16()
 vgg16_model = VGG16(weights='imagenet',include_top=False,input_shape=(81,81,3))
-
 
 model = Sequential()
 
 for layer in vgg16_model.layers:
   model.add(layer)
 
-#כדי לראות את מבנה המודל:
 model.summary()
 
 conv_model = Sequential()
@@ -68,6 +64,9 @@ for layer in vgg16_model.layers[:-6]:
   conv_model.add(layer)
 
 conv_model.summary()
+
+for layer in conv_model.layers:
+    layer.trainable = False
 
 transfer_layer = model.get_layer('block5_pool')
 
@@ -82,7 +81,6 @@ conv_model = Model(inputs=conv_model.input,
 num_classes = 5
 
 # start a new Keras Sequential model.
-#יצירת מודל מסוג שכבות
 new_model = Sequential()
 
 # add the convolutional layers of the VGG16 model
@@ -104,19 +102,11 @@ new_model.add(Dropout(0.5))
 # add the final layer for the actual classification
 new_model.add(Dense(num_classes, activation='softmax'))
 
-
 optimizer = Adam(learning_rate=1e-5)
 
-# loss function should by 'categorical_crossentropy' for multiple classes
-# but here we better use 'binary_crossentropy' because we need to distinguish between 2 classes
-# loss = 'binary_crossentropy '
-
-# loss = 'binary_crossentropy'
 loss = 'categorical_crossentropy'
 print("compile_model")
 new_model.compile(optimizer=optimizer, loss=loss, metrics=['binary_accuracy'])
-
-
 
 es = EarlyStopping(monitor='val_loss',
                    min_delta=0,
@@ -144,13 +134,12 @@ print("Test set classification accuracy: {0:.2%}".format(result[1]))
 test_batches.reset()
 predictions = new_model.predict_generator(test_batches,steps=step_size_test,verbose=1)
 
-
 # # predicted class indices
 y_pred = np.argmax(predictions,axis=1)
 
-
 print("save_model")
 new_model.save('model_vgg_categorical_s81.h5')
+
 from sklearn.metrics import confusion_matrix,classification_report
 # by the Confusion Matrix and Classification Report of sklearn
 y_pred = np.argmax(predictions, axis=1)

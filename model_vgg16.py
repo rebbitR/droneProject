@@ -44,7 +44,6 @@ test_batches = ImageDataGenerator().flow_from_directory(directory=test_path,
 
 
 
-# still dont runing
 vgg16_model = VGG16()
 
 model = Sequential()
@@ -52,7 +51,6 @@ model = Sequential()
 for layer in vgg16_model.layers:
   model.add(layer)
 
-#כדי לראות את מבנה המודל:
 model.summary()
 
 conv_model = Sequential()
@@ -67,14 +65,9 @@ transfer_layer = model.get_layer('block5_pool')
 # define the conv_model inputs and outputs
 conv_model = Model(inputs=conv_model.input,
                    outputs=transfer_layer.output)
-
-# # the 5 classes:
-# num_classes = 5
-
-# the 5 classes:
+# the 4 classes:
 num_classes = 4
 # start a new Keras Sequential model.
-#יצירת מודל מסוג שכבות
 new_model = Sequential()
 
 # add the convolutional layers of the VGG16 model

@@ -1,19 +1,17 @@
 
 # create_dataset_from_csv:----------------------------
+
+# Importing necessary functions
 from bs4 import BeautifulSoup
 import pandas as pd
 from os import makedirs
-from os.path import splitext, dirname, basename, join
-import numpy
 from yolo import yolo_detect_return_places_list
 import numpy as np
 from numpy import asarray
+from os.path import splitext, dirname, basename, join
+import numpy
 from PIL import Image
-
-
-# Importing necessary functions
 from keras.preprocessing.image import ImageDataGenerator,img_to_array, array_to_img, load_img
-import os
 import cv2
 
 # Initialising the ImageDataGenerator class.
@@ -63,11 +61,8 @@ def changeResolution1(pathOfImage,numImage):
 
 
 def changeResolution2(frame,size):
-    # numpydata = asarray(frame)
-    # resized_img = numpydata.resize((size, size))
     img = Image.fromarray(frame)
     resized_img = img.resize((size, size))
-    #resized_img.save("resized_image"+str(1)+".jpg")
     open_cv_image = numpy.array(resized_img)
     open_cv_image = open_cv_image[:, :, ::-1].copy()
     return open_cv_image
@@ -138,6 +133,7 @@ def white(img,size):
 #     return buf
 
 # function that get image and place_arr and return fix image for the model
+
 def cut_place(image,place,size):
     # print(place)
     x=round(float(place[0]))
@@ -164,10 +160,6 @@ def cut_place(image,place,size):
         crop_img = image[y:y + h, x:x + w]
         buf_img=image_augmentation(crop_img,"image_augmentation")
 
-    # for img in buf_img:
-    #     cv2.imshow("cropped", img)
-    #     cv2.waitKey(10)
-    #     cv2.destroyAllWindows()
     return buf_img
 
 def read_from_xml(path_xml):
@@ -226,6 +218,7 @@ def fix_place_to_arr(place):
     return placeInt
 
 # function that get csv whith path, and place for every image, and directory for the fix images
+
 def create_dataset_from_csv(csv, frame_dir: str,size,name="image", ext="jpg"):
     #create dir for the crope images in this csv
     v_name = splitext(basename(csv))[0]
@@ -276,7 +269,7 @@ def create_dataset_from_csv(csv, frame_dir: str,size,name="image", ext="jpg"):
                 img.append(img1)
 
             #copy the crope image to the directory
-            if numOfImages == 1:  #Save 0 second frame
+            if numOfImages == 1:
                 for i in img:
                     for j in i:
                         cv2.imwrite("{}_{}.{}".format(base_path, "0000", ext), j)
@@ -316,7 +309,7 @@ def create_dataset_from_csv(csv, frame_dir: str,size,name="image", ext="jpg"):
 # create_dataset_with_yolo_places('baloon','baloon_dataset',size)
 
 # split_train_test_validation:---------------------------------------------
-# from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split
 import os
 import shutil
 
