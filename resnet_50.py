@@ -7,7 +7,7 @@ from tensorflow.keras.optimizers import RMSprop
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout, InputLayer
 from tensorflow.keras.models import Sequential
 from keras.preprocessing.image import ImageDataGenerator
-
+import matplotlib as plt
 IMG_WIDTH=81
 IMG_HEIGHT=81
 IMG_DIM = (IMG_WIDTH, IMG_HEIGHT)
@@ -70,7 +70,7 @@ model.build((None, 81, 81, 3))
 
 model.summary()
 
-checkpoint = ModelCheckpoint('pred_drone_5_classes_restnet_50_2.h5',
+checkpoint = ModelCheckpoint('pred_drone_5_classes_restnet_50_3.h5',
                              verbose=1, monitor='val_loss',save_best_only=True,
                              mode='auto')
 
@@ -80,6 +80,24 @@ history = model.fit(train_generator,
                               validation_data=test_generator,
                               validation_steps=50,
                               verbose=1, callbacks=[checkpoint])
+# list all data in history
+print(history.history.keys())
+# summarize history for accuracy
+plt.plot(history.history['accuracy'])
+plt.plot(history.history['val_accuracy'])
+plt.title('model accuracy')
+plt.ylabel('accuracy')
+plt.xlabel('epoch')
+plt.legend(['train', 'test'], loc='upper left')
+plt.show()
+# summarize history for loss
+plt.plot(history.history['loss'])
+plt.plot(history.history['val_loss'])
+plt.title('model loss')
+plt.ylabel('loss')
+plt.xlabel('epoch')
+plt.legend(['train', 'test'], loc='upper left')
+plt.show()
 
 # model.save('pred_drone_5_classes_restnet_50_1.h5')
 
