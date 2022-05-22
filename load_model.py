@@ -18,7 +18,7 @@ def my_model(path,size,type):
         classes = ['airplane', 'bird', 'drone', 'helicopter', 'other']
     else:
         print('ERROR')
-        return 1,'ERROR'
+        return 0,1,'ERROR'
     saved_model = load_model(model)
     img = image.load_img(path, target_size=(size, size))
     img = np.asarray(img)
