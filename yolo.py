@@ -65,86 +65,86 @@ import PIL
 #
 #
 #
-def yolo_detect_return_dirs(list_pic):
-
-    pre_img=[]
-    classFile='yolo_file/coco.names'
-
-    with open(classFile,'rt') as f:
-        classNames=f.read().rstrip('\n').split('\n')
-    configPath='yolo_file/ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt'
-    weightsPath='yolo_file/frozen_inference_graph.pb'
-    net = cv2.dnn_DetectionModel(weightsPath,configPath)
-
-    net.setInputSize(320,320)
-    net.setInputScale(1.0/127.5)
-    net.setInputMean((127.5,127.5,127.5))
-    net.setInputSwapRB(True)
-
-    list1=[]
-    dir = 0
-    for pic in list_pic:
-
-        # print(list_pic[dir])
-
-        classIds,confs,bbox=net.detect(np.asarray(pic))
-        pre_img.append((pic,False))
-        numImg = 0
-
-        if len(classIds)!=0:
-            list2 = []
-
-            # Parent Directory path
-            parent_dir = "yolo_detect"
-            # Path
-            path = os.path.join(parent_dir, str(dir)+'_'+'pic')
-            os.mkdir(path)
-
-            for classId,confidence,box in zip(classIds.flatten(),confs.flatten(),bbox):
-
-                left=box[0]
-                top=box[1]
-                right=box[2]+box[0]
-                bottom=box[3]+box[1]
-                # print(type(pic))
-                image1=Image.fromarray(pic)
-                # print(type(image1))
-
-                crop_image = image1.crop((left, top, right, bottom))
-                crop_image.save(path+'/'+str(numImg)+'_'+classNames[classId-1]+'.png')
-                np_img=np.array(crop_image)
-                list2.append(np_img)
-
-                numImg=numImg+1
-                # pre_img[-1]=(np_img,True)
-
-            for pic in list2:
-                cv2.imshow('crop',pic)
-                cv2.waitKey(500)
-                cv2.destroyAllWindows()
-        else:
-            list2.append('yolo didnt found objects in this image')
-        list1.append(list2)
-        print(numImg)
-        dir=dir+1
-
-    return list1
-
-img = cv2.imread("images/lisbon.jpg")
-img1 = cv2.imread("images/V_DRONE_0011_007.png")
-img2 = cv2.imread("images/drone-hovering-over-field-country-alongside-road-carolina-blue-skies-puffy-white-clouds-landscape-100179933")
-img3 = cv2.imread("images/drone-flying-toilet-paper-roll-to-customer-concept-delivery-over-sky-176661172")
-img4 = cv2.imread("images/V_HELICOPTER_0011_012.png")
-
-list_pic=[]
-
-list_pic.append(img)
-list_pic.append(img1)
-list_pic.append(img2)
-list_pic.append(img3)
-list_pic.append(img4)
-
-pre_img=yolo_detect_return_dirs(list_pic)
+# def yolo_detect_return_dirs(list_pic):
+#
+#     pre_img=[]
+#     classFile='yolo_file/coco.names'
+#
+#     with open(classFile,'rt') as f:
+#         classNames=f.read().rstrip('\n').split('\n')
+#     configPath='yolo_file/ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt'
+#     weightsPath='yolo_file/frozen_inference_graph.pb'
+#     net = cv2.dnn_DetectionModel(weightsPath,configPath)
+#
+#     net.setInputSize(320,320)
+#     net.setInputScale(1.0/127.5)
+#     net.setInputMean((127.5,127.5,127.5))
+#     net.setInputSwapRB(True)
+#
+#     list1=[]
+#     dir = 0
+#     for pic in list_pic:
+#
+#         # print(list_pic[dir])
+#
+#         classIds,confs,bbox=net.detect(np.asarray(pic))
+#         pre_img.append((pic,False))
+#         numImg = 0
+#
+#         if len(classIds)!=0:
+#             list2 = []
+#
+#             # Parent Directory path
+#             parent_dir = "yolo_detect"
+#             # Path
+#             path = os.path.join(parent_dir, str(dir)+'_'+'pic')
+#             os.mkdir(path)
+#
+#             for classId,confidence,box in zip(classIds.flatten(),confs.flatten(),bbox):
+#
+#                 left=box[0]
+#                 top=box[1]
+#                 right=box[2]+box[0]
+#                 bottom=box[3]+box[1]
+#                 # print(type(pic))
+#                 image1=Image.fromarray(pic)
+#                 # print(type(image1))
+#
+#                 crop_image = image1.crop((left, top, right, bottom))
+#                 crop_image.save(path+'/'+str(numImg)+'_'+classNames[classId-1]+'.png')
+#                 np_img=np.array(crop_image)
+#                 list2.append(np_img)
+#
+#                 numImg=numImg+1
+#                 # pre_img[-1]=(np_img,True)
+#
+#             for pic in list2:
+#                 cv2.imshow('crop',pic)
+#                 cv2.waitKey(500)
+#                 cv2.destroyAllWindows()
+#         else:
+#             list2.append('yolo didnt found objects in this image')
+#         list1.append(list2)
+#         print(numImg)
+#         dir=dir+1
+#
+#     return list1
+#
+# img = cv2.imread("images/lisbon.jpg")
+# img1 = cv2.imread("images/V_DRONE_0011_007.png")
+# img2 = cv2.imread("images/drone-hovering-over-field-country-alongside-road-carolina-blue-skies-puffy-white-clouds-landscape-100179933")
+# img3 = cv2.imread("images/drone-flying-toilet-paper-roll-to-customer-concept-delivery-over-sky-176661172")
+# img4 = cv2.imread("images/V_HELICOPTER_0011_012.png")
+#
+# list_pic=[]
+#
+# list_pic.append(img)
+# list_pic.append(img1)
+# list_pic.append(img2)
+# list_pic.append(img3)
+# list_pic.append(img4)
+#
+# pre_img=yolo_detect_return_dirs(list_pic)
 
 # def fun(list):
 #     list_for_sent=[]
