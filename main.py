@@ -1,8 +1,10 @@
 # main number 2 try option 2 with classes_try:---------
+import threading
+
 import classes
 from log import getLog,send_buf_to_log
 from cut_video import cut_video_by_second,videotoframes,framestovideo
-
+from load_model import my_model
 import cv2
 from multiprocessing import Pool
 
@@ -55,8 +57,22 @@ def main(path):
         frame1.cut_objects()
         # find_kinds_with_model:
         # try multiprocessing
-        with Pool(3) as p:
-            p.map(frame1.model, ['resnet_50', 'binary_vgg16', 'category_vgg16'])
+        # t=[]
+        # arr=['resnet_50', 'binary_vgg16']
+        # for i in range(2):
+        #     t.append(threading.Thread(target=frame1.model,args=(arr[i],)))
+        #     t[i].start()
+        # for i in range(2):
+        #     t[i].join()
+        t = []
+        arr = ['resnet_50', 'binary_vgg16', 'category_vgg16']
+        for i in range(3):
+            t.append(threading.Thread(target=my_model, args=('object0.png', 81, arr[i])))
+            t[i].start()
+        for i in range(3):
+            t[i].join()
+        # with Pool(3) as p:
+        #     p.map(frame1.model, ['resnet_50', 'binary_vgg16', 'category_vgg16'])
         # frame1.model('resnet_50')
         # frame1.model('binary_vgg16')
         # frame1.model('category_vgg16')
@@ -78,15 +94,16 @@ def main(path):
 
     return buf
 
+if __name__ == '__main__':
 
-buf = main("video/V_AIRPLANE_042.mp4")
+    buf = main("video/V_AIRPLANE_048.mp4")
 # for i in buf:
 #     i.show_img()
 
-buf1=[]
-for i in buf:
-    buf1.append(i.frameC)
-framestovideo("airplane-res.mp4",buf1)
+# buf1=[]
+# for i in buf:
+#     buf1.append(i.frameC)
+# framestovideo("airplane-res.mp4",buf1)
 
 
 

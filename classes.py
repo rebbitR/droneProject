@@ -3,7 +3,7 @@ import numpy as np
 
 from load_model import my_model
 from yolo import yolo_detect_return_places_list
-
+from datetime import datetime
 from PIL import Image
 
 class frame:
@@ -116,13 +116,16 @@ class frame:
         numObj=0
         # print('model:')
         for obj1 in self.objectsC:
-            cv2.imwrite("object.png", obj1.objectC)
-            output,i,kind = my_model("object.png", size, type)
+            # name = 'object'+str(datetime.timestamp(datetime.now())).split('.')[0]+'.png'
+            name="object"+str(numObj)+".png"
+            cv2.imwrite(name, obj1.objectC)
+            output,i,kind = my_model(name, size, type)
             if kind=='ERROR':
                 break
             # print(type+': '+str(numObj)+' '+kind)
             self.objectsC[numObj].models[type] = kind
-            print('output: '+str(output))
+            print("+++",type,numObj,kind)
+            # print('output: '+str(output))
             numObj = numObj + 1
 
     def print_results_frame(self):
