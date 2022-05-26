@@ -1,23 +1,11 @@
-import cv2
-import random
-import numpy as np
-import os
-from flask import Flask, request, jsonify, json
+
+from flask import Flask, request, jsonify
 from flask_cors import CORS
-from classes import frame
 from main import main
-from os.path import isfile, join
 from cut_video import framestovideo
 
-
-
-
 app = Flask(__name__)
-
 CORS(app)
-
-
-
 
 @app.route('/post', methods=['POST'])
 def program():
@@ -42,7 +30,6 @@ def program():
     describe=['detection drone']
 
     return jsonify({'filename': filename1,'url':url1,'dis':describe})
-
 
 if __name__ == '__main__':
     # run app in debug mode on port 5000
