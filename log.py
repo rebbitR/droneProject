@@ -10,6 +10,15 @@ def writeToLog_buf(txt,second,place):
     f.write(txt+" second: "+str(second)+" place: "+str(place)+"\n")
     f.close()
 
+def writeToFile(txt):
+    f = open('./results_of_3models.txt', 'a')
+    f.write(txt+"\n")
+    f.close()
+
+def writeToFileRes(type_model,kind):
+    f = open('./results_of_3models.txt', 'a')
+    f.write("-model: "+type_model+" -class: "+kind+"\n")
+    f.close()
 
 # import logging
 #
