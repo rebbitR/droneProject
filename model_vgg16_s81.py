@@ -65,8 +65,8 @@ for layer in vgg16_model.layers[:-6]:
 
 conv_model.summary()
 
-for layer in conv_model.layers:
-    layer.trainable = False
+# for layer in conv_model.layers:
+#     layer.trainable = False
 
 transfer_layer = model.get_layer('block5_pool')
 
