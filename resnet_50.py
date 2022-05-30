@@ -60,8 +60,8 @@ model.add(restnet)
 
 model.add(Dense(512, activation='relu', input_dim=(IMG_HEIGHT,IMG_WIDTH,3)))
 model.add(Dropout(0.3))
-# model.add(Dense(512, activation='relu'))
-# model.add(Dropout(0.3))
+model.add(Dense(512, activation='relu'))
+model.add(Dropout(0.3))
 model.add(Dense(5, activation='softmax'))
 model.compile(loss='categorical_crossentropy',
               optimizer=RMSprop(learning_rate=2e-5),
