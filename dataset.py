@@ -442,3 +442,56 @@ def split_train_test_validation(base_dir_airplane, base_dir_helicopter,base_dir_
 
 #split_train_test_validation("Data/airplain", "Data/helicopter","Data/bird","Data/drone")
 # split_train_test_validation("dataset_2_classes/airplane", "dataset_2_classes/helicopter","dataset_2_classes/bird","dataset_2_classes/drone","dataset_2_classes/other")
+
+def split_train_test_validation_2(base_dir_class):
+    arr = []
+    for i in sorted(os.listdir(base_dir_class)):  # go through the whole list of files (in current class)
+        arr.append(i)  # add the names of all the files to the array
+
+    # divide randomly into folders (for both classes):
+    # train: 70 %
+    # test: 20 %
+    # validate: 10 %
+    class_train_validate, class_test = train_test_split(arr, test_size=0.2, random_state=1)  # puts 20% to class_test
+    class_train, class_validate = train_test_split(class_train_validate, test_size=0.12,
+                                               random_state=1)  # puts 12% of class_train_validate into class_validate
+
+    name_class=os.path.basename(base_dir_class)
+    for item in class_train:
+        ori = base_dir_class + '/' + item  # original folder
+        dest = os.path.join("train_test_split/train/"+name_class+'/', item)  # destination folder
+        if not os.path.exists(dest.split('/'+item)[0]): # check if the directory is exist
+            os.makedirs(dest.split('/'+item)[0])
+        shutil.copy(ori, dest)
+
+    for item in class_test:
+        ori = base_dir_class + '/' + item  # original folder
+        dest = os.path.join("train_test_split/test/"+name_class+'/', item)  # destination folder
+        if not os.path.exists(dest.split('/'+item)[0]): # check if the directory is exist
+            os.makedirs(dest.split('/'+item)[0])
+        shutil.copy(ori, dest)
+
+    for item in class_validate:
+        ori = base_dir_class + '/' + item  # original folder
+        dest = os.path.join("train_test_split/validate/"+name_class+'/', item)  # destination folder
+        if not os.path.exists(dest.split('/'+item)[0]): # check if the directory is exist
+            os.makedirs(dest.split('/'+item)[0])
+        shutil.copy(ori, dest)
+
+# # run split_train_test_validation_2
+# classes_pathes=[]
+#
+# aiplane_path= r"C:\Users\רננה קייקוב\Desktop\Project\פרויקט זיהוי רחפן\all the data\dataset_2_classes\airplane"
+# bird_path= r"C:\Users\רננה קייקוב\Desktop\Project\פרויקט זיהוי רחפן\all the data\dataset_2_classes\bird"
+# drone_path= r"C:\Users\רננה קייקוב\Desktop\Project\פרויקט זיהוי רחפן\all the data\dataset_2_classes\drone"
+# helicopter_path= r"C:\Users\רננה קייקוב\Desktop\Project\פרויקט זיהוי רחפן\all the data\dataset_2_classes\helicopter"
+# other_path= r"C:\Users\רננה קייקוב\Desktop\Project\פרויקט זיהוי רחפן\all the data\dataset_2_classes\other"
+#
+# classes_pathes.append(aiplane_path)
+# classes_pathes.append(bird_path)
+# classes_pathes.append(drone_path)
+# classes_pathes.append(helicopter_path)
+# classes_pathes.append(other_path)
+#
+# for i in range(0,5):
+#     split_train_test_validation_2(classes_pathes[i])
