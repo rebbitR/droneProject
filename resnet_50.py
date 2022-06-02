@@ -1,21 +1,40 @@
 
 from keras.callbacks import ModelCheckpoint
-from tensorflow.keras.applications.resnet import ResNet50
-from tensorflow.keras.models import Model
-import tensorflow.keras
+from keras.applications.resnet import ResNet50
+from keras.models import Model
+import keras
 from tensorflow.keras.optimizers import RMSprop
-from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout, InputLayer
-from tensorflow.keras.models import Sequential
-from keras.preprocessing.image import ImageDataGenerator
-import matplotlib as plt
+from keras.layers import Conv2D,Dense, Dropout
+from keras.models import Sequential
+from model_functions import load_data,print_results_model
+
+
 IMG_WIDTH=81
 IMG_HEIGHT=81
 IMG_DIM = (IMG_WIDTH, IMG_HEIGHT)
 
+batch_size = 32
+
+train_path = 'dataset/train'
+valid_path = 'dataset/validate'
+test_path = 'dataset/test'
+
+class_mode='categorical'
+size=81
+classes = ['airplane', 'bird', 'drone','helicopter','other']
+
+train_generator,val_generator,test_generator=load_data(classes,
+                                                       batch_size,
+                                                       train_path,
+                                                       test_path,
+                                                       valid_path,
+                                                       size,
+                                                       class_mode)
+
 restnet = ResNet50(include_top=False, weights='imagenet', input_shape=(IMG_HEIGHT,IMG_WIDTH,3))
 
 output = restnet.layers[-1].output
-output = tensorflow.keras.layers.Flatten()(output)
+output = keras.layers.Flatten()(output)
 
 restnet = Model(restnet.input,output)
 
@@ -24,38 +43,8 @@ for layer in restnet.layers:
 
 restnet.summary()
 
-batch_size = 32
-
-train_path = 'dataset/train'
-valid_path = 'dataset/validate'
-test_path = 'dataset/test'
-
-
-classes = ['airplane', 'bird', 'drone','helicopter','other']
-
-train_generator = ImageDataGenerator().flow_from_directory(directory=train_path,
-                                            classes=classes,
-                                            class_mode='categorical',
-                                            target_size=(81,81),
-                                            batch_size=batch_size,
-                                            shuffle=True)
-
-val_generator = ImageDataGenerator().flow_from_directory(directory=valid_path,
-                                            classes=classes,
-                                            class_mode='categorical',
-                                            target_size=(81,81),
-                                            batch_size=batch_size,
-                                            shuffle=True)
-
-test_generator = ImageDataGenerator().flow_from_directory(directory=test_path,
-                                               classes=classes,
-                                               class_mode='categorical',
-                                               target_size=(81,81),
-                                               batch_size=batch_size,
-                                               shuffle=False)
-
-
 model = Sequential()
+
 model.add(restnet)
 
 model.add(Dense(512, activation='relu', input_dim=(IMG_HEIGHT,IMG_WIDTH,3)))
@@ -65,84 +54,22 @@ model.add(Dropout(0.3))
 model.add(Dense(5, activation='softmax'))
 model.compile(loss='categorical_crossentropy',
               optimizer=RMSprop(learning_rate=2e-5),
-              metrics=['accuracy'])
+              metrics=['categorical_accuracy'])
 model.build((None, 81, 81, 3))
 
 model.summary()
-
-checkpoint = ModelCheckpoint('pred_drone_5_classes_restnet_50_3.h5',
+save_as='pred_drone_5_classes_restnet_50_3.h5'
+checkpoint = ModelCheckpoint(save_as,
                              verbose=1, monitor='val_loss',save_best_only=True,
                              mode='auto')
 
 history = model.fit(train_generator,
                               steps_per_epoch=100,
-                              epochs=100,
+                              epochs=3,
                               validation_data=test_generator,
                               validation_steps=50,
                               verbose=1, callbacks=[checkpoint])
-# list all data in history
-print(history.history.keys())
-# summarize history for accuracy
-plt.plot(history.history['accuracy'])
-plt.plot(history.history['val_accuracy'])
-plt.title('model accuracy')
-plt.ylabel('accuracy')
-plt.xlabel('epoch')
-plt.legend(['train', 'test'], loc='upper left')
-plt.show()
-# summarize history for loss
-plt.plot(history.history['loss'])
-plt.plot(history.history['val_loss'])
-plt.title('model loss')
-plt.ylabel('loss')
-plt.xlabel('epoch')
-plt.legend(['train', 'test'], loc='upper left')
-plt.show()
 
-# model.save('pred_drone_5_classes_restnet_50_1.h5')
-
-#
-# restnet.trainable = True
-# set_trainable = False
-# for layer in restnet.layers:
-#     if layer.name in ['res5c_branch2b', 'res5c_branch2c', 'activation_97']:
-#         set_trainable = True
-#     if set_trainable:
-#         layer.trainable = True
-#     else:
-#         layer.trainable = False
-# layers = [(layer, layer.name, layer.trainable) for layer in restnet.layers]
-# pd.DataFrame(layers, columns=['Layer Type', 'Layer Name', 'Layer Trainable'])
-#
-# # from tensorflow.python.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout, InputLayer
-# # from tensorflow.python.keras.models import Sequential
-# # # import keras.optimizer_v2.rmsprop as rms
-# #
-# # from tensorflow.python.keras.optimizer_v2.rmsprop import RMSprop
-# from tensorflow.keras.optimizers import RMSprop
-#
-# model_finetuned = Sequential()
-# model_finetuned.add(restnet)
-# model_finetuned.add(Dense(512, activation='relu', input_dim=(IMG_HEIGHT,IMG_WIDTH,3)))
-# model_finetuned.add(Dropout(0.3))
-# model_finetuned.add(Dense(512, activation='relu'))
-# model_finetuned.add(Dropout(0.3))
-# model_finetuned.add(Dense(5, activation='softmax'))
-# model_finetuned.compile(loss='categorical_crossentropy',
-#               optimizer=RMSprop(learning_rate=1e-5),
-#               metrics=['accuracy'])
-#
-# model_finetuned.build((None, 81, 81, 3))
-#
-# model_finetuned.summary()
-#
-# history_1 = model_finetuned.fit(train_generator,
-#                                   steps_per_epoch=100,
-#                                   epochs=15,
-#                                   validation_data=test_generator,
-#                                   validation_steps=20,
-#                                   verbose=1)
-#
-# model_finetuned.save('pred_drone_5_classes_restnet_50.h5')
+print_results_model(save_as,history)
 
 # https://towardsdatascience.com/deep-learning-using-transfer-learning-python-code-for-resnet50-8acdfb3a2d38
