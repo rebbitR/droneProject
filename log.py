@@ -1,4 +1,10 @@
 
+import logging
+logging.basicConfig(filename="log.txt", level=logging.DEBUG)
+logging.debug("Debug logging test...")
+def write_to_log(txt):
+    logging.info(txt)
+#> 2019-02-17 11:40:38,254 :: INFO :: Just like that!
 
 def writeToLog(second):
     f = open('./text.txt', 'a')
