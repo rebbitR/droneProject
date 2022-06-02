@@ -2,7 +2,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from main import main
-from cut_video import framestovideo
+from video import framestovideo
 
 app = Flask(__name__)
 CORS(app)
