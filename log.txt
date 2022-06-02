@@ -1,0 +1,2226 @@
+DEBUG:root:Debug logging test...
+DEBUG:h5py._conv:Creating converter from 3 to 5
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 6188
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 6188
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 6188
+INFO:root:--frame id: 0
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'no', 'resnet_50': 'airplane'}
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 6328
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 6328
+WARNING:tensorflow:5 out of the last 5 calls to <function Model.make_predict_function.<locals>.predict_function at 0x000001A8C6FD0CA8> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has experimental_relax_shapes=True option that relaxes argument shapes that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 6328
+WARNING:tensorflow:6 out of the last 6 calls to <function Model.make_predict_function.<locals>.predict_function at 0x000001A8C76EA4C8> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has experimental_relax_shapes=True option that relaxes argument shapes that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+INFO:root:--frame id: 1
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'no', 'resnet_50': 'airplane'}
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 6397
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 6397
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 6397
+INFO:root:--frame id: 2
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'no', 'resnet_50': 'airplane'}
+DEBUG:root:Debug logging test...
+DEBUG:root:Debug logging test...
+DEBUG:root:Debug logging test...
+INFO:root:129frames::::::::::
+INFO:root:02:30:20
+INFO:root:02:30:21
+DEBUG:h5py._conv:Creating converter from 3 to 5
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 6188
+INFO:root:--frame id: 0
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:30:22
+INFO:root:02:30:22
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 6328
+INFO:root:--frame id: 1
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:30:24
+INFO:root:02:30:24
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 6397
+INFO:root:--frame id: 2
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:30:25
+INFO:root:02:30:25
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 6735
+INFO:root:--frame id: 3
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:30:27
+INFO:root:02:30:27
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7106
+WARNING:tensorflow:5 out of the last 5 calls to <function Model.make_predict_function.<locals>.predict_function at 0x0000023188E72C18> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has experimental_relax_shapes=True option that relaxes argument shapes that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+INFO:root:--frame id: 4
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:30:29
+INFO:root:02:30:29
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7277
+WARNING:tensorflow:6 out of the last 6 calls to <function Model.make_predict_function.<locals>.predict_function at 0x0000023188B05B88> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has experimental_relax_shapes=True option that relaxes argument shapes that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+INFO:root:--frame id: 5
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:30:30
+INFO:root:02:30:30
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7505
+INFO:root:--frame id: 6
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:30:31
+INFO:root:02:30:32
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7916
+INFO:root:--frame id: 7
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:30:33
+INFO:root:02:30:34
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 8
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:30:36
+INFO:root:02:30:37
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 9
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:30:39
+INFO:root:02:30:40
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 10
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:30:41
+INFO:root:02:30:42
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 11
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:30:44
+INFO:root:02:30:45
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 12
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:30:46
+INFO:root:02:30:47
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 13
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:30:49
+INFO:root:02:30:49
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 14
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:30:51
+INFO:root:02:30:51
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 15
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:30:53
+INFO:root:02:30:54
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 16
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:30:57
+INFO:root:02:30:58
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 17
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:00
+INFO:root:02:31:00
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 18
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:02
+INFO:root:02:31:03
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 19
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:04
+INFO:root:02:31:05
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 20
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:07
+INFO:root:02:31:08
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 21
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:10
+INFO:root:02:31:10
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 22
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:12
+INFO:root:02:31:13
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 23
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:15
+INFO:root:02:31:16
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 24
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:18
+INFO:root:02:31:18
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 25
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:20
+INFO:root:02:31:21
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 26
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:22
+INFO:root:02:31:22
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 27
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:23
+INFO:root:02:31:23
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 28
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:24
+INFO:root:02:31:24
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 29
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:25
+INFO:root:02:31:26
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 30
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:27
+INFO:root:02:31:27
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 31
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:28
+INFO:root:02:31:28
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 32
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:29
+INFO:root:02:31:30
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 33
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:31
+INFO:root:02:31:31
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 34
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:32
+INFO:root:02:31:33
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 35
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:34
+INFO:root:02:31:34
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 36
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:35
+INFO:root:02:31:36
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 37
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:37
+INFO:root:02:31:37
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 38
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:38
+INFO:root:02:31:38
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 39
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:39
+INFO:root:02:31:40
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 40
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:41
+INFO:root:02:31:41
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 41
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:42
+INFO:root:02:31:43
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 42
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:44
+INFO:root:02:31:44
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 43
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:45
+INFO:root:02:31:45
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 44
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:46
+INFO:root:02:31:46
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 45
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:47
+INFO:root:02:31:48
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 46
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:49
+INFO:root:02:31:49
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 47
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:50
+INFO:root:02:31:50
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 48
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:51
+INFO:root:02:31:51
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7802
+INFO:root:--frame id: 49
+INFO:root:  num objects: 2
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:   object number 1
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:53
+INFO:root:02:31:54
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 50
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:55
+INFO:root:02:31:55
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 51
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:56
+INFO:root:02:31:56
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 52
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:57
+INFO:root:02:31:57
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 53
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:31:58
+INFO:root:02:31:58
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7090
+INFO:root:--frame id: 54
+INFO:root:  num objects: 2
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:   object number 1
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:32:01
+INFO:root:02:32:01
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 55
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:32:02
+INFO:root:02:32:02
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 56
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:32:03
+INFO:root:02:32:03
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7858
+INFO:root:--frame id: 57
+INFO:root:  num objects: 2
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:   object number 1
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:32:05
+INFO:root:02:32:05
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7596
+INFO:root:--frame id: 58
+INFO:root:  num objects: 2
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:   object number 1
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:32:07
+INFO:root:02:32:07
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7935
+INFO:root:--frame id: 59
+INFO:root:  num objects: 2
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:   object number 1
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:32:09
+INFO:root:02:32:09
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7640
+INFO:root:--frame id: 60
+INFO:root:  num objects: 2
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:   object number 1
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:32:11
+INFO:root:02:32:11
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 61
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:32:12
+INFO:root:02:32:13
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 62
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:32:14
+INFO:root:02:32:14
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 63
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:32:15
+INFO:root:02:32:16
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8027
+INFO:root:--frame id: 64
+INFO:root:  num objects: 2
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:   object number 1
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:32:18
+INFO:root:02:32:18
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 65
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:32:19
+INFO:root:02:32:19
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 66
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:32:20
+INFO:root:02:32:20
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 67
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:32:21
+INFO:root:02:32:21
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 68
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:32:22
+INFO:root:02:32:22
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 69
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:32:23
+INFO:root:02:32:23
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 70
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:32:24
+INFO:root:02:32:24
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 71
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:32:26
+INFO:root:02:32:27
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 72
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:32:29
+INFO:root:02:32:29
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 73
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:32:31
+INFO:root:02:32:32
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 74
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:32:34
+INFO:root:02:32:35
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7875
+INFO:root:--frame id: 75
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:32:37
+INFO:root:02:32:38
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7764
+INFO:root:--frame id: 76
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:32:40
+INFO:root:02:32:41
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 77
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:32:43
+INFO:root:02:32:43
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8016
+INFO:root:--frame id: 78
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:32:45
+INFO:root:02:32:46
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7052
+INFO:root:--frame id: 79
+INFO:root:  num objects: 2
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:   object number 1
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:32:50
+INFO:root:02:32:50
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 6882
+INFO:root:--frame id: 80
+INFO:root:  num objects: 2
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:   object number 1
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:32:55
+INFO:root:02:32:55
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8183
+INFO:root:--frame id: 81
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:32:57
+INFO:root:02:32:58
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 82
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:00
+INFO:root:02:33:01
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8101
+INFO:root:--frame id: 83
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:03
+INFO:root:02:33:03
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 6757
+INFO:root:--frame id: 84
+INFO:root:  num objects: 2
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:   object number 1
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:07
+INFO:root:02:33:08
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 6919
+INFO:root:--frame id: 85
+INFO:root:  num objects: 2
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:   object number 1
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:13
+INFO:root:02:33:13
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8053
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7162
+INFO:root:--frame id: 86
+INFO:root:  num objects: 2
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:   object number 1
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:17
+INFO:root:02:33:18
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8153
+INFO:root:--frame id: 87
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:19
+INFO:root:02:33:19
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8148
+INFO:root:--frame id: 88
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:20
+INFO:root:02:33:20
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 89
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:21
+INFO:root:02:33:22
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 90
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:22
+INFO:root:02:33:23
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 91
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:23
+INFO:root:02:33:24
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 92
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:24
+INFO:root:02:33:25
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7423
+INFO:root:--frame id: 93
+INFO:root:  num objects: 2
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:   object number 1
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:26
+INFO:root:02:33:27
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 94
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:27
+INFO:root:02:33:28
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 95
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:29
+INFO:root:02:33:29
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 96
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:30
+INFO:root:02:33:30
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 97
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:31
+INFO:root:02:33:31
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 98
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:32
+INFO:root:02:33:32
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 99
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:33
+INFO:root:02:33:33
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7588
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7205
+INFO:root:--frame id: 100
+INFO:root:  num objects: 2
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:   object number 1
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:35
+INFO:root:02:33:35
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7751
+INFO:root:--frame id: 101
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:36
+INFO:root:02:33:36
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7854
+INFO:root:--frame id: 102
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:37
+INFO:root:02:33:37
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7752
+INFO:root:--frame id: 103
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:38
+INFO:root:02:33:38
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8122
+INFO:root:--frame id: 104
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:39
+INFO:root:02:33:39
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8103
+INFO:root:--frame id: 105
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:40
+INFO:root:02:33:40
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 106
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:41
+INFO:root:02:33:42
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8113
+INFO:root:--frame id: 107
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:43
+INFO:root:02:33:44
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 108
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:45
+INFO:root:02:33:46
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8187
+INFO:root:--frame id: 109
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:47
+INFO:root:02:33:47
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 110
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:49
+INFO:root:02:33:49
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 111
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:50
+INFO:root:02:33:50
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7930
+INFO:root:--frame id: 112
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:51
+INFO:root:02:33:52
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7805
+INFO:root:--frame id: 113
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:53
+INFO:root:02:33:53
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8142
+INFO:root:--frame id: 114
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:54
+INFO:root:02:33:55
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 115
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:56
+INFO:root:02:33:56
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 116
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:57
+INFO:root:02:33:57
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 117
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:58
+INFO:root:02:33:58
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 118
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:33:59
+INFO:root:02:34:00
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 119
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:34:01
+INFO:root:02:34:01
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 120
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:34:02
+INFO:root:02:34:02
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 121
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:34:04
+INFO:root:02:34:04
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 122
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:34:05
+INFO:root:02:34:05
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 123
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:34:06
+INFO:root:02:34:06
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 124
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:34:07
+INFO:root:02:34:08
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7831
+INFO:root:--frame id: 125
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:34:08
+INFO:root:02:34:09
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7877
+INFO:root:--frame id: 126
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:34:10
+INFO:root:02:34:10
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7894
+INFO:root:--frame id: 127
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:34:11
+INFO:root:02:34:11
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7625
+INFO:root:--frame id: 128
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:34:12
+INFO:root:02:34:12
+DEBUG:root:Debug logging test...
+INFO:root:129 frames---
+INFO:root:02:39:06
+INFO:root:02:39:06
+DEBUG:h5py._conv:Creating converter from 3 to 5
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 6188
+INFO:root:--frame id: 0
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:07
+INFO:root:02:39:08
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 6328
+INFO:root:--frame id: 1
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:09
+INFO:root:02:39:09
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 6397
+INFO:root:--frame id: 2
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:10
+INFO:root:02:39:10
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 6735
+INFO:root:--frame id: 3
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:11
+INFO:root:02:39:12
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7106
+WARNING:tensorflow:5 out of the last 5 calls to <function Model.make_predict_function.<locals>.predict_function at 0x0000020E8094E3A8> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has experimental_relax_shapes=True option that relaxes argument shapes that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+INFO:root:--frame id: 4
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:13
+INFO:root:02:39:13
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7277
+WARNING:tensorflow:6 out of the last 6 calls to <function Model.make_predict_function.<locals>.predict_function at 0x0000020E80923558> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has experimental_relax_shapes=True option that relaxes argument shapes that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+INFO:root:--frame id: 5
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:14
+INFO:root:02:39:14
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7505
+INFO:root:--frame id: 6
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:15
+INFO:root:02:39:16
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7916
+INFO:root:--frame id: 7
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:17
+INFO:root:02:39:17
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 8
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:18
+INFO:root:02:39:19
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 9
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:20
+INFO:root:02:39:20
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 10
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:21
+INFO:root:02:39:21
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 11
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:22
+INFO:root:02:39:23
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 12
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:23
+INFO:root:02:39:24
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 13
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:25
+INFO:root:02:39:25
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 14
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:26
+INFO:root:02:39:26
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 15
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:27
+INFO:root:02:39:28
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 16
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:28
+INFO:root:02:39:29
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 17
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:30
+INFO:root:02:39:30
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 18
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:31
+INFO:root:02:39:31
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 19
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:32
+INFO:root:02:39:32
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 20
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:33
+INFO:root:02:39:33
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 21
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:34
+INFO:root:02:39:35
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 22
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:36
+INFO:root:02:39:36
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 23
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:37
+INFO:root:02:39:37
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 24
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:38
+INFO:root:02:39:38
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 25
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:39
+INFO:root:02:39:39
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 26
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:40
+INFO:root:02:39:40
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 27
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:41
+INFO:root:02:39:41
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 28
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:42
+INFO:root:02:39:42
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 29
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:43
+INFO:root:02:39:43
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 30
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:44
+INFO:root:02:39:45
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 31
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:47
+INFO:root:02:39:48
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 32
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:50
+INFO:root:02:39:50
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 33
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:52
+INFO:root:02:39:52
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 34
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:53
+INFO:root:02:39:53
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 35
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:54
+INFO:root:02:39:54
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 36
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:55
+INFO:root:02:39:55
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 37
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:56
+INFO:root:02:39:56
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 38
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:57
+INFO:root:02:39:57
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 39
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:58
+INFO:root:02:39:58
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 40
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:39:59
+INFO:root:02:39:59
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 41
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:01
+INFO:root:02:40:01
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 42
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:02
+INFO:root:02:40:03
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 43
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:04
+INFO:root:02:40:04
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 44
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:05
+INFO:root:02:40:06
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 45
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:07
+INFO:root:02:40:07
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 46
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:08
+INFO:root:02:40:08
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 47
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:09
+INFO:root:02:40:10
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 48
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:11
+INFO:root:02:40:11
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7802
+INFO:root:--frame id: 49
+INFO:root:  num objects: 2
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:   object number 1
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:13
+INFO:root:02:40:13
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 50
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:14
+INFO:root:02:40:14
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 51
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:15
+INFO:root:02:40:16
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 52
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:16
+INFO:root:02:40:17
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 53
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:18
+INFO:root:02:40:18
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7090
+INFO:root:--frame id: 54
+INFO:root:  num objects: 2
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:   object number 1
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:20
+INFO:root:02:40:20
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 55
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:21
+INFO:root:02:40:21
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 56
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:22
+INFO:root:02:40:23
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7858
+INFO:root:--frame id: 57
+INFO:root:  num objects: 2
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:   object number 1
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:24
+INFO:root:02:40:25
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7596
+INFO:root:--frame id: 58
+INFO:root:  num objects: 2
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:   object number 1
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:26
+INFO:root:02:40:27
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7935
+INFO:root:--frame id: 59
+INFO:root:  num objects: 2
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:   object number 1
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:28
+INFO:root:02:40:29
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7640
+INFO:root:--frame id: 60
+INFO:root:  num objects: 2
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:   object number 1
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:30
+INFO:root:02:40:31
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 61
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:32
+INFO:root:02:40:32
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 62
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:33
+INFO:root:02:40:33
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 63
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:34
+INFO:root:02:40:35
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8027
+INFO:root:--frame id: 64
+INFO:root:  num objects: 2
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:   object number 1
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:36
+INFO:root:02:40:37
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 65
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:38
+INFO:root:02:40:38
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 66
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:39
+INFO:root:02:40:39
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 67
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:40
+INFO:root:02:40:41
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 68
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:42
+INFO:root:02:40:42
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 69
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:43
+INFO:root:02:40:43
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 70
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:44
+INFO:root:02:40:45
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 71
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:46
+INFO:root:02:40:46
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 72
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:47
+INFO:root:02:40:48
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 73
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:49
+INFO:root:02:40:49
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 74
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:50
+INFO:root:02:40:51
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7875
+INFO:root:--frame id: 75
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:52
+INFO:root:02:40:52
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7764
+INFO:root:--frame id: 76
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:53
+INFO:root:02:40:53
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 77
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:54
+INFO:root:02:40:55
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8016
+INFO:root:--frame id: 78
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:56
+INFO:root:02:40:56
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7052
+INFO:root:--frame id: 79
+INFO:root:  num objects: 2
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:   object number 1
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:40:58
+INFO:root:02:40:58
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 6882
+INFO:root:--frame id: 80
+INFO:root:  num objects: 2
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:   object number 1
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:00
+INFO:root:02:41:00
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8183
+INFO:root:--frame id: 81
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:01
+INFO:root:02:41:01
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 82
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:02
+INFO:root:02:41:02
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8101
+INFO:root:--frame id: 83
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:03
+INFO:root:02:41:03
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 6757
+INFO:root:--frame id: 84
+INFO:root:  num objects: 2
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:   object number 1
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:05
+INFO:root:02:41:05
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 6919
+INFO:root:--frame id: 85
+INFO:root:  num objects: 2
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:   object number 1
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:08
+INFO:root:02:41:08
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8053
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7162
+INFO:root:--frame id: 86
+INFO:root:  num objects: 2
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:   object number 1
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:10
+INFO:root:02:41:10
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8153
+INFO:root:--frame id: 87
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:11
+INFO:root:02:41:11
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8148
+INFO:root:--frame id: 88
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:12
+INFO:root:02:41:12
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 89
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:13
+INFO:root:02:41:13
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 90
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:14
+INFO:root:02:41:14
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 91
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:15
+INFO:root:02:41:15
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 92
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:16
+INFO:root:02:41:16
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7423
+INFO:root:--frame id: 93
+INFO:root:  num objects: 2
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:   object number 1
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:18
+INFO:root:02:41:18
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 94
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:19
+INFO:root:02:41:19
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 95
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:20
+INFO:root:02:41:20
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 96
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:21
+INFO:root:02:41:21
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 97
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:22
+INFO:root:02:41:22
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 98
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:23
+INFO:root:02:41:23
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 99
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:24
+INFO:root:02:41:25
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7588
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7205
+INFO:root:--frame id: 100
+INFO:root:  num objects: 2
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:   object number 1
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:26
+INFO:root:02:41:26
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7751
+INFO:root:--frame id: 101
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:27
+INFO:root:02:41:28
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7854
+INFO:root:--frame id: 102
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:28
+INFO:root:02:41:29
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7752
+INFO:root:--frame id: 103
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:29
+INFO:root:02:41:30
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8122
+INFO:root:--frame id: 104
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:30
+INFO:root:02:41:31
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8103
+INFO:root:--frame id: 105
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:32
+INFO:root:02:41:32
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 106
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:33
+INFO:root:02:41:33
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8113
+INFO:root:--frame id: 107
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:34
+INFO:root:02:41:34
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 108
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:35
+INFO:root:02:41:35
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8187
+INFO:root:--frame id: 109
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:36
+INFO:root:02:41:36
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 110
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:37
+INFO:root:02:41:37
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 111
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:38
+INFO:root:02:41:39
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7930
+INFO:root:--frame id: 112
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:39
+INFO:root:02:41:40
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7805
+INFO:root:--frame id: 113
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:40
+INFO:root:02:41:41
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8142
+INFO:root:--frame id: 114
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:42
+INFO:root:02:41:42
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 115
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:43
+INFO:root:02:41:43
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 116
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:44
+INFO:root:02:41:44
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 117
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:45
+INFO:root:02:41:45
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 118
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:46
+INFO:root:02:41:46
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 119
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:47
+INFO:root:02:41:47
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 120
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:49
+INFO:root:02:41:49
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 121
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:50
+INFO:root:02:41:50
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 122
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:51
+INFO:root:02:41:51
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 123
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:52
+INFO:root:02:41:52
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 8192
+INFO:root:--frame id: 124
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:53
+INFO:root:02:41:53
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7831
+INFO:root:--frame id: 125
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:54
+INFO:root:02:41:54
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7877
+INFO:root:--frame id: 126
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:55
+INFO:root:02:41:55
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7894
+INFO:root:--frame id: 127
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:56
+INFO:root:02:41:56
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 41 7625
+INFO:root:--frame id: 128
+INFO:root:  num objects: 1
+INFO:root:   object number 0
+INFO:root:{'yolo': 'airplane', 'category_vgg16': 'drone', 'binary_vgg16': 'None', 'resnet_50': 'None'}
+INFO:root:02:41:57
+INFO:root:02:41:57
