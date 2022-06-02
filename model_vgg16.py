@@ -1,50 +1,63 @@
 
-
-import numpy as np
 from tensorflow.keras.optimizers import Adam
-from tensorflow.keras.optimizers import RMSprop
 from tensorflow.keras.callbacks import EarlyStopping
 from tensorflow.keras.models import Model, Sequential
 from tensorflow.keras.layers import Dense, Flatten, Dropout
 from tensorflow.keras.applications import VGG16
-from tensorflow.keras.applications.vgg16 import preprocess_input, decode_predictions
-from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from model_functions import load_data,print_results_model
 
-
+# model 1= 224 categorical
+# model 2= 81 binary
+# model 3= 81 categorical
 
 batch_size = 32
 
+# model 1
 train_path = 'dataset/train'
 valid_path = 'dataset/validate'
 test_path = 'dataset/test'
+# model 2
+# train_path = 'create_dataset_2/train'
+# test_path = 'create_dataset_2/test'
+# valid_path='create_dataset_2/validate'
+# model 3
+# train_path='dataset_2_classes/dataset/train'
+# test_path='dataset_2_classes/dataset/test'
+# valid_path='dataset_2_classes/dataset/validate'
+
+# model 1
+size=224
+# model 2 and model 3
+# size=81
 
 
-classes = ['airplain', 'bird', 'drone','helicopter']
+# model 1
+class_mode='categorical'
+# model 2
+# class_mode='binary'
+# model 3
+# class_mode='categorical'
 
-train_batches = ImageDataGenerator().flow_from_directory(directory=train_path,
-                                            classes=classes,
-                                            class_mode='categorical',
-                                            target_size=(224,224),
-                                            batch_size=batch_size,
-                                            shuffle=True)
+# model 1
+classes = ['airplane', 'bird', 'drone','helicopter']
+# # model 2
+# classes = ['yes','no']
+# # model 3
+# classes = ['airplane', 'bird', 'drone','helicopter','other']
 
-valid_batches = ImageDataGenerator().flow_from_directory(directory=valid_path,
-                                            classes=classes,
-                                            class_mode='categorical',
-                                            target_size=(224,224),
-                                            batch_size=batch_size,
-                                            shuffle=True)
+train_batches,valid_batches,test_batches=load_data(classes,
+                                                       batch_size,
+                                                       train_path,
+                                                       test_path,
+                                                       valid_path,
+                                                       size,
+                                                       class_mode)
 
-test_batches = ImageDataGenerator().flow_from_directory(directory=test_path,
-                                               classes=classes,
-                                               class_mode='categorical',
-                                               target_size=(224,224),
-                                               batch_size=batch_size,
-                                               shuffle=False)
-
-
-
+# model 1
 vgg16_model = VGG16()
+# model 2 model 3
+# vgg16_model = VGG16(weights='imagenet',include_top=False,input_shape=(81,81,3))
+
 
 model = Sequential()
 
@@ -65,8 +78,13 @@ transfer_layer = model.get_layer('block5_pool')
 # define the conv_model inputs and outputs
 conv_model = Model(inputs=conv_model.input,
                    outputs=transfer_layer.output)
-# the 4 classes:
+# model 1
 num_classes = 4
+# # model 2
+# num_classes = 2
+# # model 3
+# num_classes = 5
+
 # start a new Keras Sequential model.
 new_model = Sequential()
 
@@ -80,7 +98,11 @@ new_model.add(Flatten())
 # add a dense (fully-connected) layer.
 # this is for combining features that the VGG16 model has
 # recognized in the image.
+
+# model 1
 new_model.add(Dense(1024, activation='relu'))
+# # model 2 and model 3
+# new_model.add(Dense(81, activation='relu'))
 
 # add a dropout layer which may prevent overfitting and
 # improve generalization ability to unseen data e.g. the test set
@@ -94,9 +116,15 @@ optimizer = Adam(learning_rate=1e-5)
 
 # loss function should by 'categorical_crossentropy' for multiple classes
 # but here we better use 'binary_crossentropy' because we need to distinguish between 2 classes
+
+# model 1 and model 3
 loss = 'binary_crossentropy'
 print("compile_model")
 new_model.compile(optimizer=optimizer, loss=loss, metrics=['binary_accuracy'])
+# # model 2
+# loss = 'categorical_crossentropy'
+# print("compile_model")
+# new_model.compile(optimizer=optimizer, loss=loss, metrics=['categorical_accuracy'])
 
 
 
@@ -123,30 +151,26 @@ result = new_model.evaluate_generator(test_batches, steps=step_size_test)
 
 print("Test set classification accuracy: {0:.2%}".format(result[1]))
 
-test_batches.reset()
-predictions = new_model.predict_generator(test_batches,steps=step_size_test,verbose=1)
+# test_batches.reset()
+# predictions = new_model.predict_generator(test_batches,steps=step_size_test,verbose=1)
+#
+#
+# # # predicted class indices
+# y_pred = np.argmax(predictions,axis=1)
 
 
-# # predicted class indices
-y_pred = np.argmax(predictions,axis=1)
+print("save_model")
 
+# model 1
+save_as='model_vgg2.h5'
+# # model 2
+# save_as='model_vgg_s81'
+# # model 3
+# save_as='model_vgg_categorical_s81.h5'
 
-# print("save_model")
-new_model.save('model_vgg2.h5')
-from sklearn.metrics import confusion_matrix
-# by the Confusion Matrix and Classification Report of sklearn
-y_pred = np.argmax(predictions, axis=1)
-print('Confusion Matrix')
-print(confusion_matrix(test_batches.classes, y_pred))
-print('Classification Report')
-target_names = ['airplane', 'bird', 'drone','helicopter']
-# print(classification_report(test_batches.classes, y_pred, target_names=target_names))
+new_model.save(save_as)
 
-import numpy as np
-from keras.models import load_model
-saved_model = load_model("model_vgg.h5")
-
-saved_model.summary()
+print_results_model(save_as,history)
 
 
 
