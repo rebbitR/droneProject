@@ -15,7 +15,7 @@ def video_to_frames(video):
     list.append(image)
     return hasFrames
  sec = 0
- frameRate = 0.08 #//it will capture image in each 0.5 second
+ frameRate = 0.08
  count=1
  success = get_frame(sec)
  while success:
