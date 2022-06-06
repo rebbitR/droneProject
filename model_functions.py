@@ -23,7 +23,7 @@ def load_data(classes,batch_size,train_path,test_path,valid_path,size,class_mode
                                                             class_mode=class_mode,
                                                             target_size=(size, size),
                                                             batch_size=batch_size,
-                                                            shuffle=True)
+                                                            shuffle=False)
     return train_batches, valid_batches, test_batches
 
 
@@ -50,6 +50,7 @@ def print_results_model(path_model,history):
 
     saved_model = load_model(path_model)
     saved_model.summary()
+
 
 from keras.preprocessing import image
 import numpy as np
