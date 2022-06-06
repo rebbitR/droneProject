@@ -3,7 +3,7 @@
 from bs4 import BeautifulSoup
 import pandas as pd
 from os import makedirs
-# from yolo import yolo_detect
+from yolo import yolo_detect
 from os.path import splitext, dirname, basename, join
 import numpy
 from PIL import Image
@@ -130,18 +130,18 @@ def create_dataset_from_xml(path,path_dir_save,size):
             cv2.imwrite(path_dir_save + '/' + filename[0:len(filename)-4] + '_'+str(i)+'.jpg', buf[i])
 
 # ?????
-# def create_dataset_with_yolo_places(original_path,save_in,size):
-#     for filename in os.listdir(original_path):
-#         path=original_path+'/'+filename
-#         print(path)
-#         img=cv2.imread(path)
-#         places,types=yolo_detect(img)
-#         print(places)
-#         if len(places)!=0:
-#             for p in range(len(places)):
-#                 buf = cut_place(img, places[p], size)
-#                 for i in range(len(buf)):
-#                     cv2.imwrite(save_in + '/' + filename[0:len(filename) - 4] + '_' + str(p)+ '_' + str(i) + '.jpg', buf[i])
+def create_dataset_with_yolo_places(original_path,save_in,size):
+    for filename in os.listdir(original_path):
+        path=original_path+'/'+filename
+        print(path)
+        img=cv2.imread(path)
+        places,types=yolo_detect(img)
+        print(places)
+        if len(places)!=0:
+            for p in range(len(places)):
+                buf = cut_place(img, places[p], size)
+                for i in range(len(buf)):
+                    cv2.imwrite(save_in + '/' + filename[0:len(filename) - 4] + '_' + str(p)+ '_' + str(i) + '.jpg', buf[i])
 #
 # # create_dataset_with_yolo_places('try_original_img','try',81)
 
@@ -246,7 +246,8 @@ def create_dataset_from_csv(csv, frame_dir: str,size,name="image", ext="jpg"):
 from sklearn.model_selection import train_test_split
 import os
 import shutil
-def split_train_test_validation_2(base_dir_class):
+
+def split_train_test_validation(base_dir_class):
     arr = []
     for i in sorted(os.listdir(base_dir_class)):  # go through the whole list of files (in current class)
         arr.append(i)  # add the names of all the files to the array
@@ -281,7 +282,7 @@ def split_train_test_validation_2(base_dir_class):
             os.makedirs(dest.split('/'+item)[0])
         shutil.copy(ori, dest)
 
-# # run split_train_test_validation_2
+# # run split_train_test_validation
 # classes_pathes=[]
 #
 # aiplane_path= r"C:\Users\רננה קייקוב\Desktop\Project\פרויקט זיהוי רחפן\all the data\dataset_2_classes\airplane"
@@ -297,4 +298,4 @@ def split_train_test_validation_2(base_dir_class):
 # classes_pathes.append(other_path)
 #
 # for i in range(0,5):
-#     split_train_test_validation_2(classes_pathes[i])
+#     split_train_test_validation(classes_pathes[i])
