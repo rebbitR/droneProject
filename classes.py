@@ -3,6 +3,8 @@ from yolo import yolo_detect
 from dataset import white,change_resolution
 from model_functions import load_my_model
 from log import write_to_log
+
+
 class Frame:
     global size
     size=81
@@ -12,13 +14,13 @@ class Frame:
                  'resnet_50':'models_files/pred_drone_5_classes_restnet_50_2.h5'}
 
     def __init__(self,frame,id):
-        self.frameC=frame
-        self.idC=id
-        self.objectsC=[]
+        self.frame=frame
+        self.id=id
+        self.objects=[]
 
     def show_img(self,img=[],txt='',waitKey=500):
         if (img==[]):
-            img=self.frameC
+            img=self.frame
         cv2.imshow(txt, img)
         cv2.waitKey(waitKey)
         cv2.destroyAllWindows()
@@ -34,38 +36,38 @@ class Frame:
         fontScale=1.3
         color=(255, 255, 255)
         thickness=1
-        for my_obj in self.objectsC:
-            cv2.putText(self.frameC, my_obj.kindC, (my_obj.placeC.xC, my_obj.placeC.yC), font,
+        for my_obj in self.objects:
+            cv2.putText(self.frame, my_obj.kindC, (my_obj.place.x, my_obj.place.y), font,
                             fontScale, color, thickness, cv2.LINE_AA)
 
     def cut_objects(self):
         mone=0
-        for obj1 in self.objectsC:
-            x = round(float(obj1.placeC.xC))
-            y = round(float(obj1.placeC.yC))
-            w = round(float(obj1.placeC.wC))
-            h = round(float(obj1.placeC.hC))
+        for obj1 in self.objects:
+            x = round(float(obj1.place.x))
+            y = round(float(obj1.place.y))
+            w = round(float(obj1.place.w))
+            h = round(float(obj1.place.h))
             if (w>size or h>size):
                 if w<size:
                     w=size
                 elif h<size:
                     h=size
-                crop_img = self.frameC[y:y + h, x:x + w]
+                crop_img = self.frame[y:y + h, x:x + w]
                 crop_img = self.change_resolution(crop_img)
             else:
                 w = size
                 h = size
-                crop_img = self.frameC[y:y + h, x:x + w]
-            self.objectsC[mone].objectC=crop_img
+                crop_img = self.frame[y:y + h, x:x + w]
+            self.objects[mone].objectC=crop_img
             mone=mone+1
 
     def detect_objects(self):
-        places,types,confs = yolo_detect(self.frameC)
+        places,types,confs = yolo_detect(self.frame)
         mone=0
         if len(places)!=0:
             for i in range(len(places)):
                 object = Obj(i,places[i],yolo=types[i])
-                self.objectsC.append(object)
+                self.objects.append(object)
                 mone=mone+1
 
     def model_detect(self,model_type):
@@ -73,33 +75,26 @@ class Frame:
         if model_type == 'binary_vgg16':
             classes = ['yes', 'no']
         path_model=models_dict[model_type]
-        for obg in self.objectsC:
+        for obg in self.objects:
             obg.object_classification(model_type,path_model,size,classes)
 
 
 
     def print_results_frame(self):
-        # print('--id: '+str(self.idC))
-        # print('  num objects: '+str(len(self.objectsC)))
-        # numObj = 0
-        # for my_obj in self.objectsC:
-        #     print('   object number '+str(numObj))
-        #     my_obj.print_results_obj()
-        #     numObj = numObj + 1
-        write_to_log('--frame id: '+str(self.idC))
-        write_to_log('  num objects: '+str(len(self.objectsC)))
+        write_to_log('--frame id: '+str(self.id))
+        write_to_log('  num objects: '+str(len(self.objects)))
         numObj = 0
-        for my_obj in self.objectsC:
+        for my_obj in self.objects:
             write_to_log('   object number '+str(numObj))
             my_obj.print_results_obj()
             numObj = numObj + 1
 
     def add_rectangle(self, left, top, right, bottom, R, B, G):
-        return cv2.rectangle(self.frameC, (left, top), (right, bottom), (B, G, R), 2)
+        return cv2.rectangle(self.frame, (left, top), (right, bottom), (B, G, R), 2)
 
     def result(self):
-        if len(self.objectsC)!=0:
-            for myObg in self.objectsC:
+        if len(self.objects)!=0:
+            for myObg in self.objects:
                 if myObg.kindC=='drone':
                     # red
                     R=255;B=0;G=0
@@ -115,32 +110,32 @@ class Frame:
                 else:
                     # white
                     R=255;B=255;G=255
-                self.frameC=self.add_rectangle(
-                                      myObg.placeC.xC,
-                                      myObg.placeC.yC+myObg.placeC.hC,
-                                      myObg.placeC.xC+myObg.placeC.wC,
-                                      myObg.placeC.yC,
+                self.frame=self.add_rectangle(
+                                      myObg.place.x,
+                                      myObg.place.y+myObg.place.h,
+                                      myObg.place.x+myObg.place.w,
+                                      myObg.place.y,
                                       R,B,G)
 
 
 
 class Place:
     def __init__(self,x,y,w,h):
-        self.xC=x
-        self.yC=y
-        self.wC=w
-        self.hC=h
+        self.x=x
+        self.y=y
+        self.w=w
+        self.h=h
 
 
 
 class Obj:
     def __init__(self,id,place1,object=None,kind=None,yolo='None',category_vgg16='None',binary_vgg16='None',resnet_50='None'):
         my_place=Place(place1[0],place1[1],place1[2],place1[3])
-        self.placeC=my_place
+        self.place=my_place
         self.objectC=object
         self.models={'yolo':yolo,'category_vgg16':category_vgg16,'binary_vgg16':binary_vgg16,'resnet_50':resnet_50}
         self.kindC=kind
-        self.idC=id
+        self.id=id
 
 
     def object_classification(self,model_type,path_model,size,classes):
