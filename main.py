@@ -1,7 +1,7 @@
 
 import classes
 from log import write_to_log
-from video import video_to_frames,frames_to_video
+from video import video_to_frames,frames_to_video,cut_video_by_second
 # from multiprocessing import Pool
 import threading
 from datetime import datetime
@@ -63,7 +63,8 @@ def print_current_time():
 
 def main(path):
 
-    buf_frames=video_to_frames(path)
+    buf_frames=cut_video_by_second(path)
+    print('num of frames: '+len(buf_frames))
     buf=[]
     for i in range(len(buf_frames)-1):
         frame=classes.Frame(buf_frames[i],i)

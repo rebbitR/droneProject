@@ -13,7 +13,7 @@ def program():
     print('i am in program')
     CreateLog()
     video_path="D:/react/src/video/myvideo_1.mp4"
-    res_video_path='D:/react/src/video/videoneww_1.mp4'
+    res_video_path='D:/react/src/video/videoNew_1.mp4'
     # video_path=r'C:\Users\רננה קייקוב\Desktop\Project\droneProject-client\react\src\video\myvideo_1.mp4'
     # res_video_path=r'C:\Users\רננה קייקוב\Desktop\Project\droneProject-client\react\src\video\videoneww_1.mp4'
 
