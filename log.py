@@ -1,6 +1,6 @@
 
 import logging
-logging.basicConfig(filename="log.txt", level=logging.DEBUG)
+
 def write_to_log(txt):
     logging.info(txt)
 
@@ -51,3 +51,10 @@ def send_buf_to_log(buf):
                 if j.kindC=='Helicopter':
                     writeToLog_buf("Found Helicopter",i.secondC,j.placeC)
 
+
+def CreateLog():
+    logging.basicConfig(filename="log.txt", level=logging.DEBUG)
+
+
+if __name__ == '__main__':
+    CreateLog()
