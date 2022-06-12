@@ -9,9 +9,9 @@ class Frame:
     global size
     size=81
     global models_dict
-    models_dict={'category_vgg16':'models_files/model_vgg_categorical_s81.h5',
+    models_dict={'category_vgg16':'models_files/pred_drone_5_classes_restnet_50_3.h5',
                  'binary_vgg16':'models_files/model_vgg_s81.h5',
-                 'resnet_50':'models_files/pred_drone_5_classes_restnet_50_2.h5'}
+                 'resnet_50':'models_files/pred_drone_5_classes_restnet_50_4.h5'}
 
     def __init__(self,frame,id):
         self.frame=frame
