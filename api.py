@@ -3,6 +3,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from main import main
 from video import frames_to_video
+from log import CreateLog
 
 app = Flask(__name__)
 CORS(app)
@@ -10,10 +11,11 @@ CORS(app)
 @app.route('/post', methods=['POST'])
 def program():
     print('i am in program')
-    # video_path="D:/react/src/video/myvideo_1.mp4"
-    # res_video_path='D:/react/src/video/videoneww_1.mp4'
-    video_path=r'C:\Users\רננה קייקוב\Desktop\Project\droneProject-client\react\src\video\myvideo_1.mp4'
-    res_video_path=r'C:\Users\רננה קייקוב\Desktop\Project\droneProject-client\react\src\video\videoneww_1.mp4'
+    CreateLog()
+    video_path="D:/react/src/video/myvideo_1.mp4"
+    res_video_path='D:/react/src/video/videoneww_1.mp4'
+    # video_path=r'C:\Users\רננה קייקוב\Desktop\Project\droneProject-client\react\src\video\myvideo_1.mp4'
+    # res_video_path=r'C:\Users\רננה קייקוב\Desktop\Project\droneProject-client\react\src\video\videoneww_1.mp4'
 
     file = request.files['myFile']
     file.save(video_path)
