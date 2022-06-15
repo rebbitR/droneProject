@@ -1,8 +1,6 @@
 
 import cv2
 
-
-
 def video_to_frames(video):
  vidcap = cv2.VideoCapture(video)
 
@@ -25,6 +23,7 @@ def video_to_frames(video):
    success = get_frame(sec)
  return list
 
+
 def frames_to_video(video_name,list=[]):
     height, width, layers = list[0].shape
     frameSize = (width,height)
@@ -35,8 +34,6 @@ def frames_to_video(video_name,list=[]):
     cv2.destroyAllWindows()
     out.release()
 
-# import classes
-# list=videotoframes('D:/droneProject111/video/V_BIRD_005.mp4')
 
 
 
@@ -69,7 +66,7 @@ def cut_video_by_second(video_path: str):
                 #             frame)
                 second = 0
 
-                # myf1 = classes.frame(frame, second)
+                # myf1 = classes.Frame(frame, second)
                 # buf.append(myf1)
                 buf.append(frame)
 
@@ -81,12 +78,13 @@ def cut_video_by_second(video_path: str):
                 # print(second)
                 # filled_second = str(second).zfill(4)
 
-                # myf1 =classes.frame(frame, second)
+                # myf1 =classes.Frame(frame, second)
                 # # cv2.imwrite("{}_{}.{}".format(base_path, filled_second, ext),
                 # #             frame)
                 # buf.append(myf1)
-                # idx = 0
                 buf.append(frame)
+
+                idx = 0
         else:
             break
 
