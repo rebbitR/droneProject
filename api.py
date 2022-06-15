@@ -13,7 +13,7 @@ def program():
     print('i am in program')
     CreateLog()
     video_path="D:/react/src/video/myvideo_1.mp4"
-    res_video_path='D:/react/src/video/videoNew_1.mp4'
+    res_video_path='videoNew_1.mp4'
     # video_path=r'C:\Users\רננה קייקוב\Desktop\Project\droneProject-client\react\src\video\myvideo_1.mp4'
     # res_video_path=r'C:\Users\רננה קייקוב\Desktop\Project\droneProject-client\react\src\video\videoneww_1.mp4'
 
@@ -24,10 +24,11 @@ def program():
     frames_to_video(res_video_path,buf)
 
     filename1="videoneww_1.mp4"
-    url1=res_video_path
-    describe=['detection drone']
-
-    return jsonify({'filename': filename1,'url':url1,'dis':describe})
+    return 'http://127.0.0.1:8887/'+'videoNew_1.mp4'
+    # url1=res_video_path
+    # describe=['detection drone']
+    #
+    # return jsonify({'filename': filename1,'url':url1,'dis':describe})
 
 if __name__ == '__main__':
     # run app in debug mode on port 5000
