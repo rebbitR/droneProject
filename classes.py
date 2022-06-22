@@ -78,10 +78,9 @@ class Frame:
         for obg in self.objects:
             obg.object_classification(model_type,path_model,size,classes)
 
-
-
     def print_results_frame(self):
         write_to_log('--frame id: '+str(self.id))
+        print('--frame id: '+str(self.id))
         write_to_log('  num objects: '+str(len(self.objects)))
         numObj = 0
         for my_obj in self.objects:
