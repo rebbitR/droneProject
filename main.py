@@ -14,7 +14,7 @@ from video import video_to_frames,frames_to_video,cut_video_by_second
 
 def main(path):
 
-    buf_frames=cut_video_by_second(path)
+    buf_frames=video_to_frames(path)
     print('num of frames: '+str(len(buf_frames)))
     buf=[]
     for i in range(len(buf_frames)):
@@ -43,8 +43,9 @@ def main(path):
         #     t[i].start()
         # for i in range(2):
         #     t[i].join()
-        # result:
 
+
+        # result:
         frame.result()
 
         # print to log the results of this frame:
