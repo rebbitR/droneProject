@@ -52,9 +52,9 @@ def send_buf_to_log(buf):
                     writeToLog_buf("Found Helicopter",i.secondC,j.placeC)
 
 
-def CreateLog():
+def create_log():
     logging.basicConfig(filename="log.txt", level=logging.DEBUG)
 
 
 if __name__ == '__main__':
-    CreateLog()
+    create_log()
